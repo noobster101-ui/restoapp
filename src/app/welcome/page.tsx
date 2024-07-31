@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const WelcomePage = () => {
   const router = useRouter();
@@ -41,9 +42,11 @@ const WelcomePage = () => {
           })}
         </p>
         <div className="flex items-center justify-center mt-8 userBox">
-          <img
+          <Image
             src={user.imgSrc}
             alt={user.name}
+            width={50}
+            height={50}
             className="rounded-full mr-4 welcomeimg"
           />
           <div className="text-left">

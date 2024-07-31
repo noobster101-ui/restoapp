@@ -3,6 +3,7 @@ import { User, Lock } from 'lucide-react';
 import Label from '@/components/ui/Label';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Login',
@@ -19,10 +20,10 @@ const Login = () => {
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-start">
           <div className="bg-white p-6 rounded-lg shadow-md max-w-md w-full md:mr-8 loginCard">
             <div className="text-center mb-6">
-              <img src="/logo.png" alt="Logo" className="mx-auto img-fluid" />
+              <Image width={50} height={20} src="/logo.png" alt="Logo" className="mx-auto img-fluid" />
               <br/>
               <h2 className="text-2xl font-bold">Login form</h2>
-              <p className="text-gray-600 text-sm py-4">Lorem Ipsum has been the industry's standard dummy text ever since.</p>
+              <p className="text-gray-600 text-sm py-4">Lorem Ipsum has been the industrys standard dummy text ever since.</p>
             </div>
             <form className="formBox">
               <div className="mb-4">

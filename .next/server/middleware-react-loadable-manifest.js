@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST='{"app\\\\user-selection\\\\page.tsx -> react-slick":{"id":3153,"files":["static/chunks/153.bd5c04e1cf17ce22.js"]}}';

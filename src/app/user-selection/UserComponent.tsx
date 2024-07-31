@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React from 'react';
 
 interface UserComponentProps {
@@ -18,9 +19,11 @@ const UserComponent: React.FC<UserComponentProps> = ({ id, name, imgSrc, selecte
       }`}
       onClick={onClick}
     >
-      <img
+      <Image
         src={imgSrc}
         alt={name}
+        width={100}
+        height={100}
         className={`rounded-full border-4 mx-auto ${
           selected ? 'border-orange-500' : 'border-transparent'
         }`}

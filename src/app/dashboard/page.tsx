@@ -8,6 +8,7 @@ import SearchBar from "@/components/layout/SearchBar";
 import FilterTabs from "@/components/layout/Filter";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
+import Image from "next/image";
 
 const allMenuItems = [
   {
@@ -87,13 +88,12 @@ export default function Dashboard() {
                 <FilterTabs onFilterChange={handleFilterChange} />
               </div>
             </div>
-            <div className="grid grid-cols-4 gap-6 p-4 mb-3">
+            <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4 mb-3">
               {filteredItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="menu-item"
-                >
-                  <img
+                <div key={item.name} className="menu-item">
+                  <Image
+                    width={100}
+                    height={100}
                     src={item.img}
                     alt={item.name}
                   />
