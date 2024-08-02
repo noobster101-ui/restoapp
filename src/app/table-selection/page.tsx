@@ -114,7 +114,7 @@ const TableSelection: React.FC = () => {
       <TableControls onFilterChange={handleFilterChange} />
 
       <div className="flex flex-grow w-100">
-        <div className="flex-grow p-5">
+        <div className="flex-grow p-5 mb-8">
           <div className="flex flex-wrap">
             {tables.map((table) => (
               <TableCard

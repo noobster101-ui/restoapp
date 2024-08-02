@@ -88,7 +88,7 @@ const TableCard: React.FC<TableCardProps> = ({
       onClick={() => onSelect(id)}
     >
       <div
-        className={`table flex flex-col items-center justify-center rounded-md border-2 ${
+        className={`seatable flex flex-col items-center justify-center rounded-md border-2 ${
           selected ? "border-4 border-orange-500" : getStatusStyles(status)
         }`}
       >
