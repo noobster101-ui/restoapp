@@ -46,9 +46,9 @@ const PinInputComponent: React.FC<PinInputComponentProps> = ({ onUnlock }) => {
 
   return (
     <div className="text-center">
-      <h2 className="text-2xl text-white mb-4">Enter your PIN</h2>
       <input
         type="password"
+        placeholder="Enter your PIN"
         value={pin}
         className="pin-input mb-4 text-center text-2xl text-white"
         maxLength={6}
