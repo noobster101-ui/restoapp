@@ -1,10 +1,10 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/table-selection/page": "app/table-selection/page.js",
-  "/welcome/page": "app/welcome/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/user-selection/page": "app/user-selection/page.js",
   "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/login/page": "app/login/page.js"
+  "/welcome/page": "app/welcome/page.js",
+  "/user-selection/page": "app/user-selection/page.js",
+  "/login/page": "app/login/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/table-selection/page": "app/table-selection/page.js"
 }
