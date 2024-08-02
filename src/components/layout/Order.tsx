@@ -8,6 +8,7 @@ interface OrderItemProps {
   name: string;
   price: number;
   imgSrc: string;
+  quantity?: number; 
 }
 
 const OrderItem: React.FC<OrderItemProps> = ({ name, price, imgSrc }) => {
@@ -24,7 +25,7 @@ const OrderItem: React.FC<OrderItemProps> = ({ name, price, imgSrc }) => {
   };
 
   return (
-    <li className="order-item flex justify-between items-center py-2">
+    <li className="order-item flex justify-between items-center pt-2">
       <Image
         src={imgSrc}
         alt={name}

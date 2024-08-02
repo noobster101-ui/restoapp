@@ -1,11 +1,20 @@
-// /components/layout/RightSidebar.tsx
-"use client";
-
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import OrderItem from "./Order";
+import { useState } from "react";
+import NoteModal from "../allModals/NoteModal";
+import PayNowModal from "../allModals/PayNowModal";
 
 export function RightSidebar() {
+  const [isNoteModalOpen, setNoteModalOpen] = useState(false);
+  const [isPayNowModalOpen, setPayNowModalOpen] = useState(false);
+
+  const orders = [
+    { name: "Steak sapi bakar", price: 25.12, imgSrc: "/steak.jpg" },
+    { name: "Steak sapi bakar", price: 15.14, imgSrc: "/ayam.jpg" },
+    { name: "Steak sapi bakar", price: 11.21, imgSrc: "/mie.jpg" },
+  ];
+
   return (
     <div className="right-sidebar relative">
       <Tabs>
@@ -34,12 +43,12 @@ export function RightSidebar() {
                 <option>Table 2</option>
               </select>
             </div>
-            <button
-              type="submit"
-              className="w-full p-2 bg-orange-100 text-orange-500 rounded-full font-bold"
+            <span
+              className="w-full p-2 bg-orange-100 text-orange-500 rounded-full font-bold noteBtn"
+              onClick={() => setNoteModalOpen(true)}
             >
               Add Note
-            </button>
+            </span>
           </form>
         </TabPanel>
         <TabPanel className="tab-panel mt-4">
@@ -59,28 +68,29 @@ export function RightSidebar() {
                 placeholder="Select Time"
               />
             </div>
-            <button
-              type="submit"
-              className="w-full p-2 bg-orange-100 text-orange-500 rounded-full font-bold"
+            <span
+              className="w-full p-2 bg-orange-100 text-orange-500 rounded-full font-bold noteBtn"
+              onClick={() => setNoteModalOpen(true)}
             >
               Reserve
-            </button>
+            </span>
           </form>
         </TabPanel>
       </Tabs>
 
       <h2 className="font-bold mt-3 mb-0">Order Details</h2>
-      <div className="order-details overflow-y-auto max-h-60">
+      <div className="order-details max-h-60">
         <ul className="order-list space-y-2">
-          <OrderItem
-            name="Steak sapi bakar"
-            price={25.12}
-            imgSrc="/steak.jpg"
-          />
-          <OrderItem name="Ayam kentang" price={15.4} imgSrc="/ayam.jpg" />
-          <OrderItem name="Mie kuah pedas" price={11.21} imgSrc="/mie.jpg" />
+          {orders.map((order, index) => (
+            <OrderItem
+              key={index}
+              name={order.name}
+              price={order.price}
+              imgSrc={order.imgSrc}
+            />
+          ))}
         </ul>
-        <div className="summary mt-4 fixed">
+        <div className="summary mt-4">
           <div className="flex justify-between">
             <span className="text-sm font-medium">Sub Total</span>
             <span className="text-sm font-medium">$62.13</span>
@@ -93,11 +103,22 @@ export function RightSidebar() {
             <span>Total</span>
             <span>$64.00</span>
           </div>
-          <button className="pay-now p-2 bg-orange-500 text-white rounded-full text-sm font-medium">
+          <button
+            className="pay-now p-2 bg-orange-500 text-white rounded-full text-sm font-medium"
+            onClick={() => setPayNowModalOpen(true)}
+          >
             Pay Now
           </button>
         </div>
       </div>
+      <NoteModal
+        isOpen={isNoteModalOpen}
+        onClose={() => setNoteModalOpen(false)}
+      />
+      <PayNowModal
+        isOpen={isPayNowModalOpen}
+        onClose={() => setPayNowModalOpen(false)}
+      />
     </div>
   );
 }

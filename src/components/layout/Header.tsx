@@ -1,7 +1,7 @@
 // /components/layout/Header.tsx
 "use client";
 
-import { Home, ReceiptText, Clock, CreditCard, User } from "lucide-react";
+import { Home, ReceiptText, Clock, CreditCard, User, ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
@@ -11,20 +11,7 @@ export function Header() {
     <header className="header flex items-center justify-between p-4 bg-white shadow-md">
       <div className="flex items-center space-x-4">
         <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
+         <ChevronLeft />
         </button>
         <div className="border-r border-gray-300 h-10"></div>
         <div className="flex items-center space-x-2">
