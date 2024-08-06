@@ -1,12 +1,22 @@
 // /components/layout/Header.tsx
 "use client";
 
-import { Home, ReceiptText, Clock, CreditCard, User, ChevronLeft } from "lucide-react";
+import { Home, ReceiptText, Clock, CreditCard, ChevronLeft, HandPlatter, ShoppingBagIcon, CalendarDaysIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
+import { useState } from "react";
+import Dropdown from "../ui/Dropdown";
 
 export function Header() {
+  const [selectedDiningOption, setSelectedDiningOption] = useState("Dine in");
+
+  // Define dining options
+  const diningOptions = [
+    { label: "Dine In", value: "dinein", icon: <HandPlatter className="w-4 h-4" /> },
+    { label: "Take Away", value: "takeaway", icon: <ShoppingBagIcon className="w-4 h-4" /> },
+    { label: "Reservation", value: "reservation", icon: <CalendarDaysIcon className="w-4 h-4" /> },
+  ];
   return (
     <header className="header flex items-center justify-between p-4 bg-white shadow-md">
       <div className="flex items-center space-x-4">
@@ -54,9 +64,15 @@ export function Header() {
             <span className="text-sm font-bold">Bills</span>
           </Link>
         </nav>
-        <Button className="text-orange-500 bg-orange-100 rounded-full px-5 py-1 text-md btn-head">
-          Dining option
-        </Button>
+      
+        <Dropdown
+          options={diningOptions}
+          selectedValue={selectedDiningOption}
+          onChange={(value) => setSelectedDiningOption(value)}
+          label="Dining option"
+          buttonClassName="text-orange-500 bg-orange-100 rounded-full px-5 py-1 text-md btn-head"
+        />
+        
         <div className="flex items-center space-x-2">
           <span className="text-sm text-gray-500 bg-gray-100 rounded-full px-2 py-2">10:53:00 26/02/2023</span>
           <div className="w-10 h-10 rounded-full overflow-hidden">

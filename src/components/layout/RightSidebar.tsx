@@ -4,16 +4,36 @@ import OrderItem from "./Order";
 import { useState } from "react";
 import NoteModal from "../allModals/NoteModal";
 import PayNowModal from "../allModals/PayNowModal";
+import PaymentSideModal from "../allModals/PaymentSideModal";
+import TipModal from "../allModals/TipModal";
+import ConfirmModal from "../allModals/ConfirmModal";
 
 export function RightSidebar() {
   const [isNoteModalOpen, setNoteModalOpen] = useState(false);
   const [isPayNowModalOpen, setPayNowModalOpen] = useState(false);
+  const [isPaymentSideModalOpen, setPaymentSideModalOpen] = useState(false);
+  const [isTipModalOpen, setTipModalOpen] = useState(false);
+  const [isConfirmModalOpen, setConfirmModalOpen] = useState(false);
 
   const orders = [
     { name: "Steak sapi bakar", price: 25.12, imgSrc: "/steak.jpg" },
-    { name: "Steak sapi bakar", price: 15.14, imgSrc: "/ayam.jpg" },
-    { name: "Steak sapi bakar", price: 11.21, imgSrc: "/mie.jpg" },
+    { name: "Ayam", price: 15.14, imgSrc: "/ayam.jpg" },
+    { name: "Mie Goreng", price: 11.21, imgSrc: "/mie.jpg" },
   ];
+
+  const handleOpenPaymentSideModal = () => {
+    setPayNowModalOpen(false);
+    setPaymentSideModalOpen(true);
+  };
+
+  const handleOpenTipModal = () => {
+    setTipModalOpen(true);
+  };
+  
+  const handleOpenConfirmModal = () => {
+    setConfirmModalOpen(true);
+  };
+  
 
   return (
     <div className="right-sidebar relative">
@@ -79,7 +99,7 @@ export function RightSidebar() {
       </Tabs>
 
       <h2 className="font-bold mt-3 mb-0">Order Details</h2>
-      <div className="order-details max-h-60">
+      <div className="order-details max-h-60 overflow-y-auto">
         <ul className="order-list space-y-2">
           {orders.map((order, index) => (
             <OrderItem
@@ -111,14 +131,41 @@ export function RightSidebar() {
           </button>
         </div>
       </div>
+
+      {/* Note Modal */}
       <NoteModal
         isOpen={isNoteModalOpen}
         onClose={() => setNoteModalOpen(false)}
       />
+
+      {/* Pay Now Modal */}
       <PayNowModal
         isOpen={isPayNowModalOpen}
         onClose={() => setPayNowModalOpen(false)}
+        onAddToOrder={handleOpenPaymentSideModal} 
       />
+
+      {/* Payment Side Modal */}
+      <PaymentSideModal
+        isOpen={isPaymentSideModalOpen}
+        onClose={() => setPaymentSideModalOpen(false)}
+        onOpenTipModal={handleOpenTipModal} 
+        onOpenConfirmModal={handleOpenConfirmModal} 
+      />
+
+      {/* Tip Modal */}
+      <TipModal
+        isOpen={isTipModalOpen}
+        onClose={() => setTipModalOpen(false)}
+      />
+
+      {/* Confirm Modal */}
+      <ConfirmModal
+        isOpen={isConfirmModalOpen}
+        onClose={() => setConfirmModalOpen(false)}
+      />
+      
+      
     </div>
   );
 }

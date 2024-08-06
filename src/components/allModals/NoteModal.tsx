@@ -10,7 +10,6 @@ const NoteModal: React.FC<NoteModalProps> = ({ isOpen, onClose }) => {
   const [note, setNote] = useState('');
 
   const handleAddNote = () => {
-    console.log('Note added:', note);
     onClose();
   };
 

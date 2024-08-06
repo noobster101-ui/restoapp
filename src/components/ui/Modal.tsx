@@ -7,7 +7,7 @@ interface ModalProps {
   title: React.ReactNode;
   children: React.ReactNode;
   footer?: React.ReactNode;
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl'; // Define size prop here
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 }
 
 const sizeClasses = {
@@ -30,7 +30,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children, footer,
             &times;
           </button>
         </div>
-        <div className="p-4 overflow-y-auto max-h-96">{children}</div> {/* Scrollable content */}
+        <div className="modalContent">{children}</div> {/* Scrollable content */}
         {footer && <div className="px-6 py-4 border-t border-gray-200 modalFooter">{footer}</div>}
       </div>
     </div>,

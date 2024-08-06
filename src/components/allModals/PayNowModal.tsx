@@ -1,22 +1,35 @@
-import React from "react";
-import Modal from "../ui/Modal";
-import OrderItem from "../layout/Order";
+"use client"; // Ensure client-side rendering
+
+import React, { useState, useEffect } from 'react';
+import Modal from '../ui/Modal';
+import OrderItem from '../layout/Order';
 
 interface PayNowModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onAddToOrder: () => void; // New prop to handle opening PaymentSideModal
 }
 
-const PayNowModal: React.FC<PayNowModalProps> = ({ isOpen, onClose }) => {
+const PayNowModal: React.FC<PayNowModalProps> = ({ isOpen, onClose, onAddToOrder }) => {
   const orders = [
-    { name: "Steak sapi bakar", price: 25.12, imgSrc: "/steak.jpg" },
-    { name: "Ayam", price: 15.14, imgSrc: "/ayam.jpg" },
+    { name: 'Steak sapi bakar', price: 25.12, imgSrc: '/steak.jpg' },
+    { name: 'Ayam', price: 15.14, imgSrc: '/ayam.jpg' },
   ];
 
   const additionals = [
-    { name: "Rice", price: 8.3, imgSrc: "/kuah.jpg" },
-    { name: "Nasi Ayam", price: 10.12, imgSrc: "/nasi-ayam.jpg" },
+    { name: 'Rice', price: 8.3, imgSrc: '/kuah.jpg' },
+    { name: 'Nasi Ayam', price: 10.12, imgSrc: '/nasi-ayam.jpg' },
   ];
+
+  useEffect(() => {
+    if (!isOpen) {
+      // Reset any state if needed
+    }
+  }, [isOpen]);
+
+  const handleAddToOrder = () => {
+    onAddToOrder();
+  };
 
   return (
     <Modal
@@ -29,14 +42,14 @@ const PayNowModal: React.FC<PayNowModalProps> = ({ isOpen, onClose }) => {
           <span className="text-lg font-bold">Total: $26.52</span>
           <button
             className="px-4 py-2 bg-orange-500 text-white rounded-full"
-            onClick={onClose}
+            onClick={handleAddToOrder}
           >
             Add to order
           </button>
         </div>
       }
     >
-      <div className="order-details pr-2 px-1">
+      <div className="order-details pr-2 p-4 overflow-y-auto max-h-96">
         <div className="mb-3 activeOrder">
           <ul className="order-list space-y-2">
             {orders.map((order, index) => (
@@ -49,9 +62,7 @@ const PayNowModal: React.FC<PayNowModalProps> = ({ isOpen, onClose }) => {
             ))}
           </ul>
         </div>
-        
         <hr />
-
         <div className="additional-orders my-2">
           <h3 className="font-semibold text-lg mb-2">Additional</h3>
           <ul className="order-list space-y-2">
