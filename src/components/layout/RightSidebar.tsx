@@ -29,11 +29,10 @@ export function RightSidebar() {
   const handleOpenTipModal = () => {
     setTipModalOpen(true);
   };
-  
+
   const handleOpenConfirmModal = () => {
     setConfirmModalOpen(true);
   };
-  
 
   return (
     <div className="right-sidebar relative">
@@ -46,50 +45,50 @@ export function RightSidebar() {
             Reservation
           </Tab>
         </TabList>
-        <TabPanel className="tab-panel mt-4">
-          <h2 className="font-bold">Customer Information</h2>
-          <form className="mt-4">
-            <div className="mb-4">
+        <TabPanel className="tab-panel">
+          <h2 className="font-bold mt-1">Customer Information</h2>
+          <form className="mt-2">
+            <div className="mb-2">
               <input
                 type="text"
-                className="w-full p-2 border border-gray-300 rounded-full"
+                className="w-full py-2 px-3 border border-gray-300 rounded-full"
                 placeholder="Customer Name"
               />
             </div>
-            <div className="mb-4">
-              <select className="w-full p-2 border border-gray-300 rounded-full">
+            <div className="mb-2">
+              <select className="w-full py-2 px-3 border border-gray-300 rounded-full">
                 <option>Select Table</option>
                 <option>Table 1</option>
                 <option>Table 2</option>
               </select>
             </div>
             <span
-              className="w-full p-2 bg-orange-100 text-orange-500 rounded-full font-bold noteBtn"
+              className="w-full p-2 mb-2 bg-orange-100 text-orange-500 rounded-full font-bold noteBtn"
               onClick={() => setNoteModalOpen(true)}
             >
               Add Note
             </span>
           </form>
         </TabPanel>
-        <TabPanel className="tab-panel mt-4">
-          <h2 className="font-bold">Reservation Details</h2>
-          <form className="mt-4">
-            <div className="mb-4">
+        <TabPanel className="tab-panel">
+          <h2 className="font-bold mt-1">Reservation Details</h2>
+          <form className="mt-2">
+            <div className="mb-2">
               <input
                 type="text"
-                className="w-full p-2 border border-gray-300 rounded-full"
+                className="w-full py-2 px-3 border border-gray-300 rounded-full"
                 placeholder="Reservation Name"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-2">
               <input
                 type="datetime-local"
-                className="w-full p-2 border border-gray-300 rounded-full"
+                className="w-full py-2 px-3 border border-gray-300 rounded-full"
                 placeholder="Select Time"
               />
             </div>
             <span
-              className="w-full p-2 bg-orange-100 text-orange-500 rounded-full font-bold noteBtn"
+              className="w-full p-2 mb-2 bg-orange-100 text-orange-500 rounded-full font-bold noteBtn"
               onClick={() => setNoteModalOpen(true)}
             >
               Reserve
@@ -98,8 +97,8 @@ export function RightSidebar() {
         </TabPanel>
       </Tabs>
 
-      <h2 className="font-bold mt-3 mb-0">Order Details</h2>
-      <div className="order-details max-h-60 overflow-y-auto">
+      <h2 className="font-bold mt-1">Order Details</h2>
+      <div className="order-details">
         <ul className="order-list space-y-2">
           {orders.map((order, index) => (
             <OrderItem
@@ -110,28 +109,27 @@ export function RightSidebar() {
             />
           ))}
         </ul>
-        <div className="summary mt-4">
-          <div className="flex justify-between">
-            <span className="text-sm font-medium">Sub Total</span>
-            <span className="text-sm font-medium">$62.13</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-sm font-medium">Tax (10%)</span>
-            <span className="text-sm font-medium">$1.87</span>
-          </div>
-          <div className="total flex justify-between font-bold text-lg">
-            <span>Total</span>
-            <span>$64.00</span>
-          </div>
-          <button
-            className="pay-now p-2 bg-orange-500 text-white rounded-full text-sm font-medium"
-            onClick={() => setPayNowModalOpen(true)}
-          >
-            Pay Now
-          </button>
-        </div>
       </div>
-
+      <div className="summary mt-2">
+        <div className="flex justify-between">
+          <span className="text-sm font-medium">Sub Total</span>
+          <span className="text-sm font-medium">$62.13</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-sm font-medium">Tax (10%)</span>
+          <span className="text-sm font-medium">$1.87</span>
+        </div>
+        <div className="total flex justify-between font-bold text-lg">
+          <span>Total</span>
+          <span>$64.00</span>
+        </div>
+        <button
+          className="pay-now p-2 bg-orange-500 text-white rounded-full text-sm font-medium"
+          onClick={() => setPayNowModalOpen(true)}
+        >
+          Pay Now
+        </button>
+      </div>
       {/* Note Modal */}
       <NoteModal
         isOpen={isNoteModalOpen}
@@ -142,15 +140,15 @@ export function RightSidebar() {
       <PayNowModal
         isOpen={isPayNowModalOpen}
         onClose={() => setPayNowModalOpen(false)}
-        onAddToOrder={handleOpenPaymentSideModal} 
+        onAddToOrder={handleOpenPaymentSideModal}
       />
 
       {/* Payment Side Modal */}
       <PaymentSideModal
         isOpen={isPaymentSideModalOpen}
         onClose={() => setPaymentSideModalOpen(false)}
-        onOpenTipModal={handleOpenTipModal} 
-        onOpenConfirmModal={handleOpenConfirmModal} 
+        onOpenTipModal={handleOpenTipModal}
+        onOpenConfirmModal={handleOpenConfirmModal}
       />
 
       {/* Tip Modal */}
@@ -164,8 +162,6 @@ export function RightSidebar() {
         isOpen={isConfirmModalOpen}
         onClose={() => setConfirmModalOpen(false)}
       />
-      
-      
     </div>
   );
 }

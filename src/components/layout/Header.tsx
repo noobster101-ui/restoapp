@@ -5,20 +5,28 @@ import { Home, ReceiptText, Clock, CreditCard, ChevronLeft, HandPlatter, Shoppin
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dropdown from "../ui/Dropdown";
 
 export function Header() {
   const [selectedDiningOption, setSelectedDiningOption] = useState("Dine in");
+  const [dateTime, setDateTime] = useState(new Date());
 
-  // Define dining options
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDateTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+  
   const diningOptions = [
     { label: "Dine In", value: "dinein", icon: <HandPlatter className="w-4 h-4" /> },
     { label: "Take Away", value: "takeaway", icon: <ShoppingBagIcon className="w-4 h-4" /> },
     { label: "Reservation", value: "reservation", icon: <CalendarDaysIcon className="w-4 h-4" /> },
   ];
   return (
-    <header className="header flex items-center justify-between p-4 bg-white shadow-md">
+    <header className="header flex items-center justify-between bg-white shadow-md">
       <div className="flex items-center space-x-4">
         <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
          <ChevronLeft />
@@ -74,7 +82,7 @@ export function Header() {
         />
         
         <div className="flex items-center space-x-2">
-          <span className="text-sm text-gray-500 bg-gray-100 rounded-full px-2 py-2">10:53:00 26/02/2023</span>
+          <span className="text-sm text-gray-500 bg-gray-100 rounded-full px-3 py-1">{dateTime.toLocaleTimeString()} {dateTime.toLocaleDateString()}</span>
           <div className="w-10 h-10 rounded-full overflow-hidden">
             <Image src="/user1.png" alt="User" width={40} height={40} />
           </div>

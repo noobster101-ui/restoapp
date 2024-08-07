@@ -36,8 +36,8 @@ const NoteModal: React.FC<NoteModalProps> = ({ isOpen, onClose }) => {
         </div>
       }
     >
-      <form className="p-1">
-        <label htmlFor="note">Enter order note</label>
+      <form className="p-4">
+        <p className='font-semibold mb-1'>Enter order note</p>
         <textarea
           id="note"
           rows={5}

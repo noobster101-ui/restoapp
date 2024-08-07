@@ -313,6 +313,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 9;
+  height: 70px;
   .nav-link.active {
     @apply text-orange-500;
   }
@@ -324,8 +325,10 @@ body {
   height: calc(90vh - 5px);
   max-width: 130px;
   width: 100%;
+  height: calc(100vh - 76px);
+  overflow: hidden;
   position: sticky;
-  top: calc(10vh + 5px);
+  top: 76px;
   .sidebar-icon {
     color: #6b7280;
   }
@@ -341,13 +344,16 @@ body {
 
 // Right Sidebar
 .right-sidebar {
-  width: 20rem;
-  padding: 1rem;
+  width: 18rem;
+  padding: 10px 12px 5px;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 76px);
+  overflow: hidden;
   position: sticky;
-  top: calc(10vh + 5px);
-  height: calc(90vh - 5px);
+  top: 76px;
+  display: flex;
+  flex-direction: column;
 
   .tabs {
     display: flex;
@@ -372,28 +378,27 @@ body {
       color: #111827;
     }
   }
-
-  .tab-panel {
-    margin-top: 1rem;
+  form {
+    input{
+      font-size: 14px;
+    }
   }
 
   .order-details {
     overflow-y: auto;
-    max-height: 220px;
-    padding-right: 8px;
+    padding: 0 5px;
   }
 
   .summary {
     border-top: 1px solid rgba(127, 126, 126, 0.4196078431);
     bottom: 0;
-    display: block;
-    position: absolute;
     width: -webkit-fill-available;
     width: -moz-available;
-    padding: 5px 15px 5px;
     background: #fff;
     top: auto;
     left: 0;
+    position: sticky;
+    bottom: 0;
 
     .flex {
       display: flex;
@@ -697,6 +702,11 @@ body {
 .modalBox {
   z-index: 99;
   height: 100%;
+  .modalContent{
+    overflow-y: auto;
+    max-height: 70vh;
+    height: 100%;
+  }
   .modalBody {
     .activeOrder {
       li {

@@ -49,7 +49,7 @@ const PayNowModal: React.FC<PayNowModalProps> = ({ isOpen, onClose, onAddToOrder
         </div>
       }
     >
-      <div className="order-details pr-2 p-4 overflow-y-auto max-h-96">
+      <div className="order-details pr-2 p-4">
         <div className="mb-3 activeOrder">
           <ul className="order-list space-y-2">
             {orders.map((order, index) => (
@@ -63,7 +63,7 @@ const PayNowModal: React.FC<PayNowModalProps> = ({ isOpen, onClose, onAddToOrder
           </ul>
         </div>
         <hr />
-        <div className="additional-orders my-2">
+        <div className="additional-orders my-2 pr-2">
           <h3 className="font-semibold text-lg mb-2">Additional</h3>
           <ul className="order-list space-y-2">
             {additionals.map((item, index) => (
