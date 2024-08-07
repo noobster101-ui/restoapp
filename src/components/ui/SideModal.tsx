@@ -12,11 +12,11 @@ interface SideModalProps {
 }
 
 const sizeClasses = {
-  sm: "max-w-sm",
-  md: "max-w-md",
-  lg: "max-w-lg",
-  xl: "max-w-xl",
-  xxl: "max-w-xxl",
+  sm: "modal-sm",
+  md: "modal-md",
+  lg: "modal-lg",
+  xl: "modal-xl",
+  xxl: "modal-xxl",
 };
 
 const SideModal: React.FC<SideModalProps> = ({

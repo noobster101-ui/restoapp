@@ -11,11 +11,11 @@ interface ModalProps {
 }
 
 const sizeClasses = {
-  sm: 'max-w-sm',
-  md: 'max-w-md',
-  lg: 'max-w-lg',
-  xl: 'max-w-xl',
-  xxl: 'max-w-2xl',
+  sm: 'modal-sm',
+  md: 'modal-md',
+  lg: 'modal-lg',
+  xl: 'modal-xl',
+  xxl: 'modal-2xl',
 };
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children, footer, size = 'md' }) => {
