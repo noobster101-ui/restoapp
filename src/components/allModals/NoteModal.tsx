@@ -22,7 +22,7 @@ const NoteModal: React.FC<NoteModalProps> = ({ isOpen, onClose }) => {
       footer={
         <div className="grid grid-cols-2 gap-4 w-full">
           <button
-            className="px-4 py-2 bg-gray-200 rounded-full"
+            className="px-6 py-2 bg-gray-200 rounded-full"
             onClick={onClose}
           >
             Cancel

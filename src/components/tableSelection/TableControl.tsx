@@ -64,7 +64,7 @@ const TableControls: React.FC<TableControlsProps> = ({ onFilterChange }) => {
           ))}
         </div>
         <div className="search-bar-wrapper flex justify-end w-full">
-          <SearchBar />
+          <SearchBar placeholder="Search customer" name="customerSearch" type="text" />
         </div>
       </div>
     </div>

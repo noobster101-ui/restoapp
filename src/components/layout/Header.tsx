@@ -1,16 +1,36 @@
-// /components/layout/Header.tsx
 "use client";
 
-import { Home, ReceiptText, Clock, CreditCard, ChevronLeft, HandPlatter, ShoppingBagIcon, CalendarDaysIcon } from "lucide-react";
+import {
+  Home,
+  ReceiptText,
+  Clock,
+  CreditCard,
+  ChevronLeft,
+  HandPlatter,
+  ShoppingBagIcon,
+  CalendarDaysIcon,
+  UserRound,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
 import { useEffect, useState } from "react";
 import Dropdown from "../ui/Dropdown";
+import ManageCustomerModal from "../allModals/ManageCustomersModal";
+import OrderSidebar from "../allModals/OrderSideModal";
 
 export function Header() {
   const [selectedDiningOption, setSelectedDiningOption] = useState("Dine in");
   const [dateTime, setDateTime] = useState(new Date());
+  const [isManageCustomerModalOpen, setManageCustomerModalOpen] =
+    useState(false);
+  const [isOrderSidebarOpen, setOrderSidebarOpen] = useState(false);
+
+  const openManageCustomerModal = () => setManageCustomerModalOpen(true);
+  const closeManageCustomerModal = () => setManageCustomerModalOpen(false);
+
+  const openOrderSidebar = () => setOrderSidebarOpen(true);
+  const closeOrderSidebar = () => setOrderSidebarOpen(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -19,17 +39,29 @@ export function Header() {
 
     return () => clearInterval(timer);
   }, []);
-  
+
   const diningOptions = [
-    { label: "Dine In", value: "dinein", icon: <HandPlatter className="w-4 h-4" /> },
-    { label: "Take Away", value: "takeaway", icon: <ShoppingBagIcon className="w-4 h-4" /> },
-    { label: "Reservation", value: "reservation", icon: <CalendarDaysIcon className="w-4 h-4" /> },
+    {
+      label: "Dine In",
+      value: "dinein",
+      icon: <HandPlatter className="w-4 h-4" />,
+    },
+    {
+      label: "Take Away",
+      value: "takeaway",
+      icon: <ShoppingBagIcon className="w-4 h-4" />,
+    },
+    {
+      label: "Reservation",
+      value: "reservation",
+      icon: <CalendarDaysIcon className="w-4 h-4" />,
+    },
   ];
   return (
     <header className="header flex items-center justify-between bg-white shadow-md">
       <div className="flex items-center space-x-4">
         <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
-         <ChevronLeft />
+          <ChevronLeft />
         </button>
         <div className="border-r border-gray-300 h-10"></div>
         <div className="flex items-center space-x-2">
@@ -42,7 +74,7 @@ export function Header() {
       </div>
 
       <div className="flex items-center space-x-4">
-        <nav className="flex items-center space-x-8">
+        <nav className="flex items-center space-x-6">
           <Link
             href="/home"
             className="flex items-center space-x-2 text-orange-500 font-bold"
@@ -51,8 +83,9 @@ export function Header() {
             <span className="text-sm font-bold">Home</span>
           </Link>
           <Link
-            href="/order"
+            href="#"
             className="flex items-center space-x-2 text-gray-500 font-bold"
+            onClick={openOrderSidebar}
           >
             <ReceiptText className="w-5 h-5" />
             <span className="text-sm font-bold">Order</span>
@@ -65,14 +98,22 @@ export function Header() {
             <span className="text-sm font-bold">History</span>
           </Link>
           <Link
-            href="/bills"
+            href="#"
             className="flex items-center space-x-2 text-gray-500 font-bold"
           >
             <CreditCard className="w-5 h-5" />
             <span className="text-sm font-bold">Bills</span>
           </Link>
+          <Link
+            href="#"
+            className="flex items-center space-x-2 text-gray-500 font-bold"
+            onClick={openManageCustomerModal}
+          >
+            <UserRound className="w-5 h-5" />
+            <span className="text-sm font-bold">Customers</span>
+          </Link>
         </nav>
-      
+
         <Dropdown
           options={diningOptions}
           selectedValue={selectedDiningOption}
@@ -80,14 +121,22 @@ export function Header() {
           label="Dining option"
           buttonClassName="text-orange-500 bg-orange-100 rounded-full px-5 py-1 text-md btn-head"
         />
-        
+
         <div className="flex items-center space-x-2">
-          <span className="text-sm text-gray-500 bg-gray-100 rounded-full px-3 py-1">{dateTime.toLocaleTimeString()} {dateTime.toLocaleDateString()}</span>
+          <span className="text-sm text-gray-500 bg-gray-100 rounded-full px-3 py-1">
+            {dateTime.toLocaleTimeString()} {dateTime.toLocaleDateString()}
+          </span>
           <div className="w-10 h-10 rounded-full overflow-hidden">
             <Image src="/user1.png" alt="User" width={40} height={40} />
           </div>
         </div>
       </div>
+
+      <ManageCustomerModal
+        isOpen={isManageCustomerModalOpen}
+        onClose={closeManageCustomerModal}
+      />
+      <OrderSidebar isOpen={isOrderSidebarOpen} onClose={closeOrderSidebar} />
     </header>
   );
 }

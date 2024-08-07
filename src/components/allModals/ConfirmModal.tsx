@@ -132,7 +132,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
           </div>
           <div className="flex space-x-4">
             <button
-              className="px-4 py-2 bg-transparent border border-orange-500 text-orange-500 rounded-full"
+              className="px-6 py-2 bg-transparent border border-orange-500 text-orange-500 rounded-full"
               onClick={onClose}
             >
               Cancel

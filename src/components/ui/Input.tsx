@@ -8,7 +8,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const Input: React.FC<InputProps> = ({ icon: Icon, className, ...props }) => {
   return (
-    <div className="relative">
+    <div className="relative px-2">
       {Icon && <Icon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />}
       <input
         className={cn(

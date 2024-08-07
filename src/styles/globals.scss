@@ -379,7 +379,7 @@ body {
     }
   }
   form {
-    input{
+    input {
       font-size: 14px;
     }
   }
@@ -702,7 +702,7 @@ body {
 .modalBox {
   z-index: 99;
   height: 100%;
-  .modalContent{
+  .modalContent {
     overflow-y: auto;
     max-height: 70vh;
     height: 100%;
@@ -802,7 +802,7 @@ body {
       }
 
       small {
-        font-size: 0.875rem; 
+        font-size: 0.875rem;
       }
     }
 
@@ -817,11 +817,42 @@ body {
   }
 }
 
-.size-sm { max-width: 320px; }
-.size-md { max-width: 768px; }
-.size-lg { max-width: 1024px; }
-.size-xl { max-width: 1280px; }
-.size-xxl { max-width: 1440px; }
+.max-w-sm {
+  max-width: 30%;
+}
+.max-w-md {
+  max-width: 45%;
+}
+.max-w-lg {
+  max-width: 65%;
+}
+.max-w-xl {
+  max-width: 75%;
+}
+.max-w-2xl {
+  max-width: 94%;
+}
+
+.pagging {
+  border-radius: 50%;
+  font-size: 16px;
+  
+  button:nth-child(1) {
+    border: 1px solid #e5e7eb;
+    border-radius: 30px 0 0 30px;
+    height: 42px;
+  }
+  button:last-child {
+    border: 1px solid #e5e7eb;
+    border-radius: 0 30px 30px 0;
+    height: 42px;
+  }
+  b {
+    border: 1px solid #e5e7eb;
+    height: 42px;
+    line-height: 42px;
+  }
+}
 
 .payBox {
   h6 {
