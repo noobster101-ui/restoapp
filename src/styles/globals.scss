@@ -231,20 +231,15 @@ body {
   border-radius: 2px;
   padding: 0;
 
-  .search-bar {
-    width: 40%;
-  }
-
   .filter-tabs {
-    width: 60%;
-    padding: 10px 16px;
+    padding: 10px 10px;
     text-align: center;
     border-left: 2px solid #8787875f;
   }
 }
 
 .search-bar {
-  padding: 9px 20px;
+  padding: 5px 20px;
 }
 
 .search-bar input {
@@ -263,7 +258,7 @@ body {
 }
 .menu-item {
   background: #fff;
-  min-height: 200px;
+  min-height: 220px;
   padding: 10px 8px;
   box-shadow: 0 0px 6px -1px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -312,7 +307,7 @@ body {
   margin-bottom: 2px;
   position: sticky;
   top: 0;
-  z-index: 9;
+  z-index: 99;
   height: 70px;
   .nav-link.active {
     @apply text-orange-500;
@@ -323,7 +318,7 @@ body {
 
 .sidebar {
   height: calc(90vh - 5px);
-  max-width: 130px;
+  max-width: 120px;
   width: 100%;
   height: calc(100vh - 76px);
   overflow: hidden;
@@ -443,14 +438,134 @@ body {
     height: 25px;
   }
 }
+
+// Time and Date Select
+.partyBtn {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+    border-top: 0;
+    border-bottom: 0;
+
+    &:first-child {
+      border-radius: 20px 0 0 20px;
+      margin-left: 0;
+      border-left: 0;
+    }
+
+    &:last-child {
+      border-radius: 0 20px 20px 0;
+      border-right: 0;
+    }
+  }
+}
+
+.timeSlotContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+    margin-top: -1px;
+
+    // Top Row (first 5 items)
+    &:nth-child(-n + 5) {
+      border-bottom: 0;
+    }
+
+    // Bottom Row (last 5 items)
+    &:nth-child(n + 11) {
+      border-bottom: 0;
+    }
+
+    // First item in the grid
+    &:nth-child(1) {
+      border-radius: 20px 0 0 0;
+    }
+
+    // Last item in the top row
+    &:nth-child(5) {
+      border-radius: 0 20px 0 0;
+      border-right: 0;
+    }
+
+    // Last item in the bottom row
+    &:nth-child(15) {
+      border-radius: 0 0 20px 0;
+      border-right: 0;
+    }
+    &:nth-child(10) {
+      border-right: 0;
+    }
+    // First item in the bottom row
+    &:nth-child(11) {
+      border-radius: 0 0 0 20px;
+      border-left: 0;
+    }
+
+    &.selected {
+      background-color: #ffe8d6;
+      color: #ff5a00;
+    }
+  }
+}
+
+// Individual Css
+
 .order-list {
   gap: 0.5rem;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.dateBtn {
+  min-width: 68px !important;
+  text-align: center;
+  padding: 5px 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.calenderFix {
+  padding: 16px 20px;
+  border-right: 1px solid #d1d5db;
+  svg {
+    width: 24px;
+  }
+}
+.sideModalBox {
+  // padding-top: 165px;
+  z-index: 99;
 }
 
 // Table Selection
 
 .table-controls {
-  display: flex;
+  // display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
@@ -466,7 +581,7 @@ body {
   align-items: center;
   p {
     white-space: nowrap;
-    padding: 0 6px;
+    padding: 0 4px;
     margin: 2px;
     display: flex;
     align-items: center;
@@ -559,14 +674,14 @@ body {
   background-color: #fff;
   border-radius: 8px;
   border: 1px solid #ccc;
-  width: 50px;
+  width: 40px;
   height: 12px;
 
   &.vertical {
     width: 12px;
-    height: 50px;
+    height: 40px;
     position: absolute;
-    top: 32%;
+    top: 35%;
 
     &.left {
       left: 0px;
@@ -759,6 +874,38 @@ body {
   }
 }
 
+// Apply Coupan
+.coupanBox {
+  border-radius: 14px;
+  border-right: 0;
+  padding-right: 8px;
+  width: calc(100% - 12px);
+
+  .ticket-shape {
+    background-image: url("/discount.png");
+    background-size: 75px 75px;
+    background-position: left;
+    width: 75px;
+    height: 75px;
+    line-height: 70px;
+    text-align: center;
+    background-repeat: no-repeat;
+    margin: -1px -10px -1px 0;
+  }
+
+  .ticket-percent {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+.oStatus {
+  padding: 1px 8px 3px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
 // SideModal
 .body-no-scroll {
   overflow: hidden;
@@ -778,9 +925,8 @@ body {
   .sideModalBody {
     transition: transform 0.3s ease-in-out;
     transform: translateX(100%);
-    z-index: 10000; // Ensure it's above the overlay
     height: 100%;
-    overflow-y: auto; // Allow scrolling within the modal
+    overflow-y: auto;
     background-color: white;
     max-width: 100%;
 
@@ -789,7 +935,7 @@ body {
     }
 
     .sideModalHeader {
-      padding: 1rem;
+      padding: 10px 15px;
       border-bottom: 1px solid #e5e7eb;
       display: flex;
       justify-content: space-between;
@@ -836,7 +982,7 @@ body {
 .pagging {
   border-radius: 50%;
   font-size: 16px;
-  
+
   button:nth-child(1) {
     border: 1px solid #e5e7eb;
     border-radius: 30px 0 0 30px;
@@ -960,4 +1106,70 @@ body {
 
 .border-orange {
   border-color: #ea580c !important;
+}
+
+@media (max-width: 800px) {
+  /* Tablet and up */
+  .md-w-100 {
+    width: 100%;
+  }
+  .md-w-50 {
+    width: 50%;
+  }
+  .table-card.small {
+    height: 110px;
+    margin: auto;
+  }
+  .seat {
+    width: 20px;
+    height: 8px;
+
+    &.vertical {
+      width: 10px;
+      height: 30px;
+      top: 36%;
+    }
+  }
+  .seatable {
+    width: 90%;
+    height: 80%;
+    margin: 11px auto;
+    span {
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      font-size: 14px;
+    }
+  }
+
+  header {
+    font-size: 80%;
+    h1 {
+      font-size: 18px;
+    }
+    img {
+      width: 40px;
+    }
+    button {
+      font-size: 12px;
+    }
+    nav {
+      span {
+        display: none;
+      }
+    }
+  }
+  .menu-item {
+    height: auto;
+    h3 {
+      margin-bottom: 0;
+    }
+    img {
+      max-height: 140px;
+    }
+  }
+  .floating-order-summary {
+    width: 84%;
+    padding: 7px 15px;
+  }
 }

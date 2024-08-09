@@ -21,7 +21,7 @@ const FilterTabs: React.FC<FilterTabsProps> = ({ onFilterChange }) => {
       {filters.map(filter => (
         <button
           key={filter}
-          className={`button-outline ${activeFilter === filter ? 'active' : ''}`}
+          className={`button-outline md:text-xs md:px-2 ${activeFilter === filter ? 'active' : ''}`}
           onClick={() => handleFilterChange(filter)}
         >
           {filter}

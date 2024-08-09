@@ -83,14 +83,18 @@ export default function Dashboard() {
               <div className="breadcrumb text-orange-500 text-sm bg-white">
                 Dashboard / Food
               </div>
-              <div className="searchFilter flex items-center justify-between mb-4 bg-white px-4 py-2">
-                <SearchBar
-                  placeholder="Search"
-                  name="customerSearch"
-                  type="text"
-                />
+              <div className="searchFilter grid lg:grid-cols-2 grid-cols-1 mb-4 bg-white px-3">
+                <div>
+                  <SearchBar
+                    placeholder="Search"
+                    name="customerSearch"
+                    type="text"
+                  />
+                </div>
 
-                <FilterTabs onFilterChange={handleFilterChange} />
+                <div>
+                  <FilterTabs onFilterChange={handleFilterChange} />
+                </div>
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-1 px-3 pb-3 mb-3">

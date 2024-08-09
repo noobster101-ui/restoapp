@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../ui/Modal';
+import useScreenSize from '../ui/ScreenSize';
 
 interface NoteModalProps {
   isOpen: boolean;
@@ -13,12 +14,22 @@ const NoteModal: React.FC<NoteModalProps> = ({ isOpen, onClose }) => {
     onClose();
   };
 
+  const modalSize = useScreenSize<'sm' | 'md' | 'lg' | 'xl' | 'xxl'>({
+    base: 'lg',
+    sm: 'xl',
+    md: 'md',
+    lg: 'sm',
+    xl: 'sm',
+    xxl: 'sm',
+  });
+
+
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
       title="Add Note"
-      size="sm"
+      size={modalSize}
       footer={
         <div className="grid grid-cols-2 gap-4 w-full">
           <button

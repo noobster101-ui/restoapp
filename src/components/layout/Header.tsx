@@ -59,7 +59,7 @@ export function Header() {
   ];
   return (
     <header className="header flex items-center justify-between bg-white shadow-md">
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-2">
         <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
           <ChevronLeft />
         </button>
@@ -67,14 +67,14 @@ export function Header() {
         <div className="flex items-center space-x-2">
           <Image src="/favlogo.png" alt="Logo" width={55} height={50} />
           <div>
-            <h1 className="text-xl font-bold">Walk-In</h1>
+            <h1 className="font-bold">Walk-In</h1>
             <p className="text-sm text-gray-500">Coca coffeetalk</p>
           </div>
         </div>
       </div>
 
-      <div className="flex items-center space-x-4">
-        <nav className="flex items-center space-x-6">
+      <div className="flex items-center space-x-2">
+        <nav className="flex items-center space-x-4">
           <Link
             href="/home"
             className="flex items-center space-x-2 text-orange-500 font-bold"
@@ -119,11 +119,11 @@ export function Header() {
           selectedValue={selectedDiningOption}
           onChange={(value) => setSelectedDiningOption(value)}
           label="Dining option"
-          buttonClassName="text-orange-500 bg-orange-100 rounded-full px-5 py-1 text-md btn-head"
+          buttonClassName="text-orange-500 bg-orange-100 rounded-full px-3 py-1 text-md btn-head"
         />
 
         <div className="flex items-center space-x-2">
-          <span className="text-sm text-gray-500 bg-gray-100 rounded-full px-3 py-1">
+          <span className="text-sm text-gray-500 bg-gray-100 rounded-full px-2 py-1 text-center">
             {dateTime.toLocaleTimeString()} {dateTime.toLocaleDateString()}
           </span>
           <div className="w-10 h-10 rounded-full overflow-hidden">

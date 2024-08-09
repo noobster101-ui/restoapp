@@ -69,6 +69,39 @@ export function RightSidebar() {
               Add Note
             </span>
           </form>
+          <h2 className="font-bold mt-1">Order Details</h2>
+          <div className="order-details">
+            <ul className="order-list space-y-2">
+              {orders.map((order, index) => (
+                <OrderItem
+                  key={index}
+                  name={order.name}
+                  price={order.price}
+                  imgSrc={order.imgSrc}
+                />
+              ))}
+            </ul>
+          </div>
+          <div className="summary mt-2 px-1">
+            <div className="flex justify-between pt-2">
+              <span className="text-sm font-medium">Sub Total</span>
+              <span className="text-sm font-medium">$62.13</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-sm font-medium">Tax (10%)</span>
+              <span className="text-sm font-medium">$1.87</span>
+            </div>
+            <div className="total flex justify-between font-bold text-lg">
+              <span>Total</span>
+              <span>$64.00</span>
+            </div>
+            <button
+              className="pay-now p-2 bg-orange-500 text-white rounded-full text-sm font-medium"
+              onClick={() => setPayNowModalOpen(true)}
+            >
+              Pay Now
+            </button>
+          </div>
         </TabPanel>
         <TabPanel className="tab-panel">
           <h2 className="font-bold mt-1">Reservation Details</h2>
@@ -94,42 +127,42 @@ export function RightSidebar() {
               Reserve
             </span>
           </form>
+          <h2 className="font-bold mt-1">Order Details</h2>
+          <div className="order-details">
+            <ul className="order-list space-y-2">
+              {orders.map((order, index) => (
+                <OrderItem
+                  key={index}
+                  name={order.name}
+                  price={order.price}
+                  imgSrc={order.imgSrc}
+                />
+              ))}
+            </ul>
+          </div>
+          <div className="summary mt-2 px-1">
+            <div className="flex justify-between pt-2">
+              <span className="text-sm font-medium">Sub Total</span>
+              <span className="text-sm font-medium">$62.13</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-sm font-medium">Tax (10%)</span>
+              <span className="text-sm font-medium">$2.87</span>
+            </div>
+            <div className="total flex justify-between font-bold text-lg">
+              <span>Total</span>
+              <span>$65.00</span>
+            </div>
+            <button
+              className="pay-now p-2 bg-orange-500 text-white rounded-full text-sm font-medium"
+              onClick={() => setPayNowModalOpen(true)}
+            >
+              Pay Now
+            </button>
+          </div>
         </TabPanel>
       </Tabs>
 
-      <h2 className="font-bold mt-1">Order Details</h2>
-      <div className="order-details">
-        <ul className="order-list space-y-2">
-          {orders.map((order, index) => (
-            <OrderItem
-              key={index}
-              name={order.name}
-              price={order.price}
-              imgSrc={order.imgSrc}
-            />
-          ))}
-        </ul>
-      </div>
-      <div className="summary mt-2">
-        <div className="flex justify-between">
-          <span className="text-sm font-medium">Sub Total</span>
-          <span className="text-sm font-medium">$62.13</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-sm font-medium">Tax (10%)</span>
-          <span className="text-sm font-medium">$1.87</span>
-        </div>
-        <div className="total flex justify-between font-bold text-lg">
-          <span>Total</span>
-          <span>$64.00</span>
-        </div>
-        <button
-          className="pay-now p-2 bg-orange-500 text-white rounded-full text-sm font-medium"
-          onClick={() => setPayNowModalOpen(true)}
-        >
-          Pay Now
-        </button>
-      </div>
       {/* Note Modal */}
       <NoteModal
         isOpen={isNoteModalOpen}

@@ -1,12 +1,11 @@
-// /pages/table-selection.tsx
 "use client";
 
 import React, { useState } from "react";
 import { Header } from "@/components/layout/Header";
-import TableControls from "../../components/tableSelection/TableControl";
-import RowSelect from "../../components/tableSelection/RowSelect";
-import TableCard from "../../components/tableSelection/TableCard";
-import FloatingOrderSummary from "../../components/tableSelection/FloatingSummary";
+import RowSelect from "@/components/tableSelection/RowSelect";
+import TableCard from "@/components/tableSelection/TableCard";
+import FloatingOrderSummary from "@/components/tableSelection/FloatingSummary";
+import TableControls from "@/components/tableSelection/TableControl";
 
 interface Table {
   id: number;
@@ -29,33 +28,13 @@ const TableSelection: React.FC = () => {
     { id: 5, name: "T-05", status: "Available", size: "small", seats: 4 },
     { id: 6, name: "T-06", status: "Available", size: "xlarge", seats: 12 },
     { id: 7, name: "T-07", status: "Available soon", size: "large", seats: 10 },
-    {
-      id: 8,
-      name: "T-08",
-      status: "Available soon",
-      size: "xlarge",
-      seats: 12,
-    },
+    { id: 8, name: "T-08", status: "Available soon", size: "xlarge", seats: 12 },
     { id: 9, name: "T-09", status: "Available", size: "small", seats: 4 },
     { id: 10, name: "T-10", status: "Reserved", size: "small", seats: 2 },
     { id: 11, name: "T-11", status: "Billed", size: "large", seats: 10 },
     { id: 12, name: "T-12", status: "Available soon", size: "small", seats: 2 },
-
-    {
-      id: 13,
-      name: "T-13",
-      status: "Available soon",
-      size: "large",
-      seats: 10,
-    },
-    {
-      id: 14,
-      name: "T-14",
-      status: "Available soon",
-      size: "xlarge",
-      seats: 12,
-    },
-
+    { id: 13, name: "T-13", status: "Available soon", size: "large", seats: 10 },
+    { id: 14, name: "T-14", status: "Available soon", size: "xlarge", seats: 12 },
     { id: 15, name: "T-15", status: "Available", size: "small", seats: 4 },
     { id: 16, name: "T-16", status: "Reserved", size: "small", seats: 2 },
   ];
@@ -85,6 +64,7 @@ const TableSelection: React.FC = () => {
 
   const handleFilterChange = (filter: string) => {
     setSelectedFilter(filter);
+    // No need to apply any filtering logic on tables here since filter changes are for modal display
   };
 
   const handleSelectTable = (id: number) => {
@@ -103,7 +83,7 @@ const TableSelection: React.FC = () => {
     <>
       <Header />
 
-      <div className="breadcrumb flex items-center space-x-2 p-4 text-sm bg-white border-b">
+      <div className="breadcrumb flex items-center space-x-2 p-4 text-sm bg-white border-b z-20 relative">
         <span className="text-gray-500">Dashboard</span>
         <span className="text-gray-500">/</span>
         <span className="text-gray-500">Food</span>

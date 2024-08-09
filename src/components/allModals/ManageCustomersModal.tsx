@@ -3,6 +3,7 @@ import Modal from "../ui/Modal";
 import SearchBar from "../layout/SearchBar";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import AddCustomerModal from "./AddCustomerModal";
+import useScreenSize from "../ui/ScreenSize";
 
 interface Customer {
   name: string;
@@ -54,6 +55,14 @@ const ManageCustomerModal: React.FC<ManageCustomerModalProps> = ({
   const handleAddCustomerClose = () => {
     setIsAddCustomerOpen(false);
   };
+  const modalSize = useScreenSize<"sm" | "md" | "lg" | "xl" | "xxl">({
+    base: "lg",
+    sm: "xxl",
+    md: "xxl",
+    lg: "lg",
+    xl: "lg",
+    xxl: "lg",
+  });
 
   return (
     <>
@@ -61,7 +70,7 @@ const ManageCustomerModal: React.FC<ManageCustomerModalProps> = ({
         isOpen={isOpen}
         onClose={onClose}
         title="Manage customer"
-        size="xl"
+        size={modalSize}
       >
         <div className="mb-2 border-b">
           <SearchBar placeholder="Search customer" name="customerSearch" />
@@ -148,7 +157,7 @@ const ManageCustomerModal: React.FC<ManageCustomerModalProps> = ({
           </div>
         </div>
       </Modal>
-      
+
       <AddCustomerModal
         isOpen={isAddCustomerOpen}
         onClose={handleAddCustomerClose}

@@ -4,6 +4,7 @@ import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Select, { SelectItem } from "../ui/LabelSelect";
 import LabelInput from "../ui/LabelInput";
+import useScreenSize from "../ui/ScreenSize";
 
 interface AddCustomerModalProps {
   isOpen: boolean;
@@ -18,12 +19,21 @@ const AddCustomerModal: React.FC<AddCustomerModalProps> = ({ isOpen, onClose }) 
   ];
   const years = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i);
 
+  const modalSize = useScreenSize<"sm" | "md" | "lg" | "xl" | "xxl">({
+    base: "lg",
+    sm: "xxl",
+    md: "xl",
+    lg: "lg",
+    xl: "lg",
+    xxl: "lg",
+  });
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
       title="Add customers"
-      size="xl"
+      size={modalSize}
+      
       footer={
         <div className="flex justify-center">
           <Button variant="outline" className="rounded-full px-20 mr-2" onClick={onClose}>Cancel</Button>
