@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app\\\\user-selection\\\\page.tsx -> react-slick\":{\"id\":\"app\\\\user-selection\\\\page.tsx -> react-slick\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_react-slick_lib_index_js.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{}"

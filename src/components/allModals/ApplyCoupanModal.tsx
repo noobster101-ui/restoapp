@@ -50,7 +50,7 @@ const ApplyCouponModal: React.FC<ApplyCouponModalProps> = ({
         </div>
       }
     >
-      <div className="grid grid-cols-12 gap-4 p-4">
+      <div className="grid grid-cols-12 gap-4 p-4 mb-4">
         {[
           { label: "Broccoli Staff (on total)", id: "option1", percent: "20" },
           { label: "Fly Dubai (on total)", id: "option2", percent: "50" },

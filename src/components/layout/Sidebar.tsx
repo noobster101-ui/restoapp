@@ -14,12 +14,12 @@ const menuItems = [
 
 export function Sidebar() {
   return (
-    <nav className="sidebar flex flex-col bg-white shadow-md p-4">
+    <nav className="sidebar flex flex-col bg-white shadow-md p-3">
       {menuItems.map((item) => (
         <Link
           key={item.name}
           href={`/${item.name.toLowerCase()}`}
-          className={`sidebar-link flex flex-col items-center p-4 hover:bg-gray-100 ${
+          className={`sidebar-link flex flex-col items-center p-3 hover:bg-gray-100 ${
             item.active ? "active" : ""
           }`}
         >

@@ -41,7 +41,7 @@ const AddCustomerModal: React.FC<AddCustomerModalProps> = ({ isOpen, onClose }) 
         </div>
       }
     >
-      <form className="p-4 mb-3">
+      <form className="p-4 mb-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <LabelInput name="name" label="Name" placeholder="Enter name" />
           <LabelInput name="deliveryArea" label="Delivery area" placeholder="Enter delivery area" />
