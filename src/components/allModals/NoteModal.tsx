@@ -18,7 +18,6 @@ const NoteModal: React.FC<NoteModalProps> = ({ isOpen, onClose }) => {
     base: 'lg',
     sm: 'xl',
     md: 'md',
-    lg: 'sm',
     xl: 'sm',
     xxl: 'sm',
   });

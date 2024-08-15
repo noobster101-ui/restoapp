@@ -59,7 +59,6 @@ const ManageCustomerModal: React.FC<ManageCustomerModalProps> = ({
     base: "lg",
     sm: "xxl",
     md: "xxl",
-    lg: "lg",
     xl: "lg",
     xxl: "lg",
   });

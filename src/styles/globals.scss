@@ -560,6 +560,13 @@ body {
 .sideModalBox {
   // padding-top: 165px;
   z-index: 99;
+  .modalHeader{
+    max-height: 65px;
+  }
+  .modalContent{
+    overflow-y: auto ;
+    max-height: calc(100vh - 65px);
+  }
 }
 
 // Table Selection
@@ -1108,6 +1115,14 @@ body {
   border-color: #ea580c !important;
 }
 
+@media (max-width: 1100px) {
+  .right-sidebar .order-details {
+    height: 120px;
+  }
+  .modalBox .modalContent{
+    max-height: 70vh;
+  }
+}
 @media (max-width: 800px) {
   /* Tablet and up */
   .md-w-100 {

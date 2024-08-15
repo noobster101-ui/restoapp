@@ -18,7 +18,6 @@ const TipModal: React.FC<TipModalProps> = ({ isOpen, onClose }) => {
     base: 'lg',
     sm: 'xl',
     md: 'md',
-    lg: 'sm',
     xl: 'sm',
     xxl: 'sm',
   });
