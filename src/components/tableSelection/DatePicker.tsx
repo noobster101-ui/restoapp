@@ -42,7 +42,7 @@ const DatePicker: React.FC = () => {
     <div className="py-4">
       {/* Date Picker Header */}
       <div className="flex justify-between items-center mb-1">
-        <p className="font-semibold mb-2">Select Date</p>
+        <p className="font-bold mb-2">Select Date</p>
 
         <div className="flex space-x-2">
           <select

@@ -1,5 +1,4 @@
 {
-  "/table-selection/page": "app/table-selection/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/dashboard/page": "app/dashboard/page.js"
+  "/dashboard/page": "app/dashboard/page.js",
+  "/table-selection/page": "app/table-selection/page.js"
 }

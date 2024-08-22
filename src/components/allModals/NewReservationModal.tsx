@@ -92,7 +92,7 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
     >
       {step === 1 ? (
         <form className="p-4 mb-3 space-y-3">
-          <p className="font-semibold mb-2">Select party size</p>
+          <p className="font-bold mb-2">Select party size</p>
           <div className="grid grid-cols-8 partyBtn">
             {partySizes.map((size, index) => (
               <label
@@ -124,7 +124,7 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
 
           <DatePicker />
 
-          <p className="font-semibold mb-2">Time slot available</p>
+          <p className="font-bold mb-2">Time slot available</p>
           <div className="timeSlotContainer">
             {timeSlots.map((time, index) => (
               <label

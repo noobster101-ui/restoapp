@@ -1,6 +1,7 @@
 // /components/OrderItem.tsx
 "use client";
 
+import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -48,14 +49,14 @@ const OrderItem: React.FC<OrderItemProps> = ({ name, price, imgSrc }) => {
           onClick={handleDecrement}
           className="bg-gray-200 rounded-full text-sm font-medium"
         >
-          -
+          <Minus />
         </button>
         <span className="text-sm font-medium">{quantity}</span>
         <button
           onClick={handleIncrement}
           className="bg-black rounded-full text-sm font-medium text-white"
         >
-          +
+          <Plus />
         </button>
       </div>
     </li>
