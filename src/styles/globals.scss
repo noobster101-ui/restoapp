@@ -343,7 +343,7 @@ body {
   }
 
   img {
-    height: 160px;
+    height: 200px;
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
@@ -1261,7 +1261,12 @@ body {
   border-color: var(--color-theme-dark) !important;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
+  .menu-item img{
+    height: 160px;
+  }
+}
+  @media (max-width: 1100px) {
   .right-sidebar .order-details {
     height: 120px;
   }
@@ -1347,5 +1352,20 @@ body {
   .floating-order-summary {
     width: 84%;
     padding: 7px 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .menu-item img{
+    height: auto;
+  }
+  .table-controls{
+    padding: 0;
+  }
+  .filter-tabs,
+  .search-bar{
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #e7e6e6;
   }
 }
