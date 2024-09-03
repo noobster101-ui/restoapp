@@ -84,7 +84,7 @@ const ApplyCouponModal: React.FC<ApplyCouponModalProps> = ({
                 <div
                   className={`flex items-center justify-center w-5 h-5 rounded-full mr-2 ${
                     selectedOption === option.id
-                      ? "bg-theme-600 text-white"
+                      ? "bg-theme-600 text-primary"
                       : "border border-gray-400"
                   }`}
                 >

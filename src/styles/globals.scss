@@ -1008,29 +1008,30 @@ body {
 
 // Apply Coupon
 
-.couponBox {
+.coupanBox {
   border-radius: 14px;
   border-right: 0;
   padding-right: 8px;
   width: calc(100% - 12px);
+  
+.ticket-percent {
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 16px;
+}
+.ticket-shape {
+  background-image: url("/discount.png");
+  background-size: 75px 75px;
+  background-position: left;
+  width: 75px;
+  height: 75px;
+  line-height: 70px;
+  text-align: center;
+  background-repeat: no-repeat;
+  margin: -1px -10px -1px 0;
+}
 
-  .ticket-shape {
-    background-image: url("/discount.png");
-    background-size: 75px 75px;
-    background-position: left;
-    width: 75px;
-    height: 75px;
-    line-height: 70px;
-    text-align: center;
-    background-repeat: no-repeat;
-    margin: -1px -10px -1px 0;
-  }
 
-  .ticket-percent {
-    color: var(--color-white);
-    font-weight: bold;
-    font-size: 16px;
-  }
 }
 
 .oStatus {
@@ -1184,11 +1185,11 @@ body {
     .rgb {
       background-image: linear-gradient(
         to left bottom,
-        var(--color-theme-light),
+        var(--color-theme-dark),
         var(--color-theme),
-        var(--color-theme-light),
+        var(--color-theme-500),
         var(--color-theme),
-        var(--color-theme-500)
+        var(--color-theme-dark)
       );
       color: var(--color-white);
     }
