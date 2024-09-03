@@ -55,7 +55,7 @@ const RunningOrder: React.FC = () => {
           {orders.map((order, index) => (
             <tr key={index} className="border-b">
               <td className="p-1">
-                <div className="w-11 h-11 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 font-medium text-xs ml-2">
+                <div className="w-11 h-11 flex items-center justify-center rounded-full bg-theme-100 text-theme-500 font-medium text-xs ml-2">
                   {order.tableNumber}
                 </div>
               </td>
@@ -72,7 +72,7 @@ const RunningOrder: React.FC = () => {
                     order.status === "Running order"
                       ? "bg-blue-100 text-blue-500"
                       : order.status === "Done soon"
-                      ? "bg-orange-100 text-orange-500"
+                      ? "bg-theme-100 text-theme-500"
                       : "bg-green-100 text-green-500"
                   }`}
                 >
@@ -81,12 +81,12 @@ const RunningOrder: React.FC = () => {
               </td>
               <td className="px-2 py-1 text-sm">{order.diningFor}</td>
               <td className="px-1 pt-4 flex justify-end space-x-1">
-                <button className="px-3 py-1 border rounded-full border-orange-500 text-orange-500 hover:bg-orange-50 flex items-center gap-1 text-sm text-nowrap">
+                <button className="px-3 py-1 border rounded-full border-theme-500 text-theme-500 hover:bg-theme-50 flex items-center gap-1 text-sm text-nowrap">
                   <Printer className="h-4 w-4" />
                   Re-Print
                 </button>
 
-                <button className="px-3 py-1 rounded-full bg-orange-500 text-white hover:bg-orange-600 flex items-center gap-1 text-sm  text-nowrap">
+                <button className="px-3 py-1 rounded-full bg-theme-500 text-white hover:bg-theme-600 flex items-center gap-1 text-sm  text-nowrap">
                   <Banknote className="h-4 w-4" />
                   Pay now
                 </button>

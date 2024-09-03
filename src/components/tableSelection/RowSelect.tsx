@@ -26,7 +26,7 @@ const RowSelect: React.FC<RowSelectProps> = ({ rows, selectedRows, onSelectRow }
             <button
               key={row}
               className={`row-item w-16 h-16 rounded-full flex items-center justify-center text-bold mx-2 my-2 ${
-                selectedRows.includes(row) ? "bg-orange-500 text-white" : "bg-orange-100 text-orange-500"
+                selectedRows.includes(row) ? "bg-theme-500 text-white" : "bg-theme-100 text-theme-500"
               }`}
               onClick={() => onSelectRow(row)}
             >

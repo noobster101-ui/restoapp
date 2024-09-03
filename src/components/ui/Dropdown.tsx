@@ -45,7 +45,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     <div className="relative">
       <button
         className={clsx(
-          " px-4 py-1 border-0 border-gray-300 rounded-full text-orange-500 bg-orange-100 text-md font-semibold dineBtn",
+          " px-4 py-1 border-0 border-gray-300 rounded-full text-theme-500 bg-theme-100 text-md font-semibold dineBtn",
           buttonClassName
         )}
         onClick={() => setIsOpen(!isOpen)}
@@ -61,11 +61,11 @@ const Dropdown: React.FC<DropdownProps> = ({
               <li
                 key={option.value}
                 className={clsx(
-                  "flex items-center justify-between px-4 py-2 cursor-pointer hover:bg-orange-100 rounded-xl",
+                  "flex items-center justify-between px-4 py-2 cursor-pointer hover:bg-theme-100 rounded-xl",
                   {
-                    "text-orange-500 border-orange": tempSelectedValue === option.value,
+                    "text-theme-500 border-theme": tempSelectedValue === option.value,
                     "text-gray-700": tempSelectedValue !== option.value,
-                    "bg-orange-100": tempSelectedValue === option.value,
+                    "bg-theme-100": tempSelectedValue === option.value,
                   }
                 )}
                 onClick={() => handleSelect(option.value)}
@@ -75,20 +75,20 @@ const Dropdown: React.FC<DropdownProps> = ({
                   <span className="ml-0">{option.label}</span>
                 </p>
                 {tempSelectedValue === option.value && (
-                  <CircleCheckBigIcon className="ml-auto text-orange-500 w-4 h-4" />
+                  <CircleCheckBigIcon className="ml-auto text-theme-500 w-4 h-4" />
                 )}
               </li>
             ))}
           </ul>
           <div className="flex justify-around items-center px-4 py-3 border-t border-gray-200">
             <button
-              className="text-orange-500 border border-orange-500 rounded-full py-1 hover:bg-orange-50 mr-2"
+              className="text-theme-500 border border-theme-500 rounded-full py-1 hover:bg-theme-50 mr-2"
               onClick={() => setIsOpen(false)}
             >
               Cancel
             </button>
             <button
-              className="text-white bg-orange-500 rounded-full py-1 hover:bg-orange-600"
+              className="text-white bg-theme-500 rounded-full py-1 hover:bg-theme-600"
               onClick={handleApply}
             >
               Apply

@@ -35,9 +35,9 @@ const Login = () => {
                 <Input id="password" type="password" placeholder="Enter password" icon={Lock} className='rounded-full' />
               </div>
               <div className="my-2 text-left pl-1">
-                <a href="#" className="text-orange-500 font-bold text-sm">Forgot password?</a>
+                <a href="#" className="text-theme-500 font-bold text-sm">Forgot password?</a>
               </div>
-              <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 rounded-full mb-3">Running order</Button>
+              <Button type="submit" className="w-full bg-theme-500 hover:bg-theme-600 rounded-full mb-3">Running order</Button>
             </form>
             <div className="my-5 text-center">
               <a href="#" className="text-gray-400 text-sm">End user agreement</a>

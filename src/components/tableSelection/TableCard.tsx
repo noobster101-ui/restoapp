@@ -25,7 +25,7 @@ const TableCard: React.FC<TableCardProps> = ({
       case "Available":
         return "bg-blue-100 text-blue-600 border-blue-500";
       case "Reserved":
-        return "bg-orange-100 text-orange-600 border-orange-500";
+        return "bg-theme-100 text-theme-600 border-theme-500";
       case "Billed":
         return "bg-green-100 text-green-600 border-green-500";
       case "Available soon":
@@ -89,12 +89,12 @@ const TableCard: React.FC<TableCardProps> = ({
     >
       <div
         className={`seatable flex flex-col items-center justify-center rounded-md border-2 ${
-          selected ? "border-4 border-orange-500" : getStatusStyles(status)
+          selected ? "border-4 border-theme-500" : getStatusStyles(status)
         }`}
       >
         <span
           className={`text-lg font-semibold ${
-            selected ? "text-orange-500" : getStatusStyles(status)
+            selected ? "text-theme-500" : getStatusStyles(status)
           }`}
         >
           {name}

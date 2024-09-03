@@ -71,7 +71,7 @@ const PinInputComponent: React.FC<PinInputComponentProps> = ({ onUnlock }) => {
       </div>
       <div className="flex justify-center space-x-4">
         <button
-          className="w-full max-w-xs px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-full mb-3"
+          className="w-full max-w-xs px-4 py-2 bg-theme-500 hover:bg-theme-600 text-white rounded-full mb-3"
           onClick={handleUnlock}
         >
           Unlock

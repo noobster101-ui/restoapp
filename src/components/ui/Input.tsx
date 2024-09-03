@@ -12,7 +12,7 @@ const Input: React.FC<InputProps> = ({ icon: Icon, className, ...props }) => {
       {Icon && <Icon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />}
       <input
         className={cn(
-          'w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500',
+          'w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-theme-500',
           Icon ? 'pl-10' : '',
           className
         )}

@@ -80,7 +80,7 @@ const OrderSidebar: React.FC<OrderSidebarProps> = ({ isOpen, onClose }) => {
         title={
           <div className="flex items-center justify-between">
             <span>Upcoming orders</span>
-            <span className="px-2 bg-orange-100 text-orange-500 rounded-full text-sm ml-3 mt-1">
+            <span className="px-2 bg-theme-100 text-theme-500 rounded-full text-sm ml-3 mt-1">
               {orders.length}
             </span>
           </div>
@@ -121,11 +121,11 @@ const OrderSidebar: React.FC<OrderSidebarProps> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 <div className="flex space-x-2">
-                  <button className="px-4 py-1 bg-transparent border border-orange-500 text-orange-500 rounded-full text-sm">
+                  <button className="px-4 py-1 bg-transparent border border-theme-500 text-theme-500 rounded-full text-sm">
                     Reject
                   </button>
                   <button
-                    className="px-4 py-1 bg-orange-500 text-white rounded-full text-sm"
+                    className="px-4 py-1 bg-theme-500 text-white rounded-full text-sm"
                     onClick={handleDeliveryClick}
                   >
                     Delivery

@@ -63,7 +63,7 @@ export function RightSidebar() {
               </select>
             </div>
             <span
-              className="w-full p-2 mb-2 bg-orange-100 text-orange-500 rounded-full font-bold noteBtn"
+              className="w-full p-2 mb-2 bg-theme-100 text-theme-500 rounded-full font-bold noteBtn"
               onClick={() => setNoteModalOpen(true)}
             >
               Add Note
@@ -96,7 +96,7 @@ export function RightSidebar() {
               <span>$64.00</span>
             </div>
             <button
-              className="pay-now p-2 bg-orange-500 text-white rounded-full text-sm font-medium"
+              className="pay-now p-2 bg-theme-500 text-white rounded-full text-sm font-medium"
               onClick={() => setPayNowModalOpen(true)}
             >
               Pay Now
@@ -121,7 +121,7 @@ export function RightSidebar() {
               />
             </div>
             <span
-              className="w-full p-2 mb-2 bg-orange-100 text-orange-500 rounded-full font-bold noteBtn"
+              className="w-full p-2 mb-2 bg-theme-100 text-theme-500 rounded-full font-bold noteBtn"
               onClick={() => setNoteModalOpen(true)}
             >
               Reserve
@@ -154,7 +154,7 @@ export function RightSidebar() {
               <span>$65.00</span>
             </div>
             <button
-              className="pay-now p-2 bg-orange-500 text-white rounded-full text-sm font-medium"
+              className="pay-now p-2 bg-theme-500 text-white rounded-full text-sm font-medium"
               onClick={() => setPayNowModalOpen(true)}
             >
               Pay Now

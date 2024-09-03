@@ -66,7 +66,7 @@ const Reservation: React.FC = () => {
       {/* Add New Reservation Button */}
       <div className="mt-5">
         <button
-          className="w-full py-2 bg-orange-500 text-white rounded-full font-medium hover:bg-orange-600"
+          className="w-full py-2 bg-theme-500 text-white rounded-full font-medium hover:bg-theme-600"
           onClick={openReservationModal}
         >
           Add new reservation

@@ -44,7 +44,7 @@ const ApplyCouponModal: React.FC<ApplyCouponModalProps> = ({
           >
             Cancel
           </Button>
-          <Button className="rounded-full px-16 bg-orange-600 text-white hover:bg-orange-500">
+          <Button className="rounded-full px-16 bg-theme-600 text-white hover:bg-theme-500">
             Apply
           </Button>
         </div>
@@ -63,7 +63,7 @@ const ApplyCouponModal: React.FC<ApplyCouponModalProps> = ({
             key={option.id}
             className={`col-span-12 sm:col-span-6 flex items-center justify-between cursor-pointer border coupanBox ${
               selectedOption === option.id
-                ? "border-orange-500 bg-orange-50"
+                ? "border-theme-500 bg-theme-50"
                 : "border-gray-300"
             }`}
             onClick={() => handleChange(option.id)}
@@ -84,7 +84,7 @@ const ApplyCouponModal: React.FC<ApplyCouponModalProps> = ({
                 <div
                   className={`flex items-center justify-center w-5 h-5 rounded-full mr-2 ${
                     selectedOption === option.id
-                      ? "bg-orange-600 text-white"
+                      ? "bg-theme-600 text-white"
                       : "border border-gray-400"
                   }`}
                 >

@@ -74,7 +74,7 @@ const DatePicker: React.FC = () => {
       {/* Date Picker Body */}
       <div className="flex items-center rounded-xl border border-gray-300 overflow-x-auto no-scrollbar">
         <div className="flex-shrink-0 calenderFix">
-          <CalendarDays className="w-5 h-5 text-orange-500" />
+          <CalendarDays className="w-5 h-5 text-theme-500" />
         </div>
 
         <div className="flex items-center space-x-0 overflow-x-scroll no-scrollbar">
@@ -83,7 +83,7 @@ const DatePicker: React.FC = () => {
               key={index}
               className={`flex flex-col items-center justify-center border-l border-r border-collapse dateBtn ${
                 day.date === selectedDate
-                  ? "bg-orange-100 text-orange-500 border-orange-500"
+                  ? "bg-theme-100 text-theme-500 border-theme-500"
                   : "text-gray-700 border-gray-300"
               }`}
               onClick={() => handleDateClick(day.date)}

@@ -111,13 +111,13 @@ const ManageCustomerModal: React.FC<ManageCustomerModalProps> = ({
                     <td className="p-3 text-nowrap">{customer.city}</td>
                     <td className="p-3"></td>
                     <td className="absolute right-0 bg-white pt-2 px-3 space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <button className="px-2 py-1 border border-orange-500 text-orange-500 rounded-full">
+                      <button className="px-2 py-1 border border-theme-500 text-theme-500 rounded-full">
                         Display order
                       </button>
-                      <button className="px-2 py-1 bg-orange-100 text-orange-500 rounded-full">
+                      <button className="px-2 py-1 bg-theme-100 text-theme-500 rounded-full">
                         Edit info
                       </button>
-                      <button className="px-2 py-1 bg-orange-500 text-white rounded-full">
+                      <button className="px-2 py-1 bg-theme-500 text-white rounded-full">
                         Add to order
                       </button>
                     </td>
@@ -141,13 +141,13 @@ const ManageCustomerModal: React.FC<ManageCustomerModalProps> = ({
             </div>
             <div className="p-2">
               <button
-                className="px-6 py-2 mr-3 border border-orange-500 text-orange-500 rounded-full"
+                className="px-6 py-2 mr-3 border border-theme-500 text-theme-500 rounded-full"
                 onClick={onClose}
               >
                 Cancel
               </button>
               <button
-                className="px-4 py-2 bg-orange-500 text-white rounded-full"
+                className="px-4 py-2 bg-theme-500 text-white rounded-full"
                 onClick={handleAddCustomerOpen}
               >
                 New customer

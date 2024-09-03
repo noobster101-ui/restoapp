@@ -64,7 +64,7 @@ const TableControls: React.FC<TableControlsProps> = ({ onFilterChange }) => {
               Available
             </p>
             <p className="flex items-center">
-              <span className="indicator reserved w-4 h-4 rounded-full mr-2 bg-orange-500 border-4 border-orange-200"></span>
+              <span className="indicator reserved w-4 h-4 rounded-full mr-2 bg-theme-500 border-4 border-theme-200"></span>
               Reserved
             </p>
             <p className="flex items-center">

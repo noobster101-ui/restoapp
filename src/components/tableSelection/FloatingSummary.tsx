@@ -22,7 +22,7 @@ const FloatingOrderSummary: React.FC<FloatingOrderSummaryProps> = ({
   return (
     <div className="floating-order-summary fixed bottom-0 left-0 w-full p-4 bg-white border-t shadow-md flex justify-between items-center">
       <div className="order-info flex items-center">
-        <div className="icon2 bg-orange-100 rounded-full">
+        <div className="icon2 bg-theme-100 rounded-full">
           <Clipboard />
         </div>
         <div className="flex">
@@ -46,7 +46,7 @@ const FloatingOrderSummary: React.FC<FloatingOrderSummaryProps> = ({
         </div>
       </div>
       <button
-        className="btn btn-primary bg-orange-500 text-white px-4 py-2 rounded-full"
+        className="btn btn-primary bg-theme-500 text-white px-4 py-2 rounded-full"
         onClick={onPlaceOrder}
       >
         Place Order

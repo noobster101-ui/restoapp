@@ -80,7 +80,7 @@ export default function Dashboard() {
         <div className="flex-1 flex flex-col">
           <div className="main-content">
             <div className="p-1">
-              <div className="breadcrumb text-orange-500 text-sm bg-white">
+              <div className="breadcrumb text-theme-500 text-sm bg-white">
                 Dashboard / Food
               </div>
               <div className="searchFilter grid lg:grid-cols-2 grid-cols-1 mb-4 bg-white px-3">

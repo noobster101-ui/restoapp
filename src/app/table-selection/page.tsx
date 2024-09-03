@@ -88,7 +88,7 @@ const TableSelection: React.FC = () => {
         <span className="text-gray-500">/</span>
         <span className="text-gray-500">Food</span>
         <span className="text-gray-500">/</span>
-        <span className="text-orange-500">Select Table</span>
+        <span className="text-theme-500">Select Table</span>
       </div>
 
       <TableControls onFilterChange={handleFilterChange} />

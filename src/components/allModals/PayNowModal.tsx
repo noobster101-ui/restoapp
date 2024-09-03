@@ -56,7 +56,7 @@ const PayNowModal: React.FC<PayNowModalProps> = ({
           <div className="flex justify-between items-center w-full">
             <span className="text-lg font-bold">Total: $26.52</span>
             <button
-              className="px-4 py-2 bg-orange-500 text-white rounded-full"
+              className="px-4 py-2 bg-theme-500 text-white rounded-full"
               onClick={handleAddToOrder}
             >
               Add to order

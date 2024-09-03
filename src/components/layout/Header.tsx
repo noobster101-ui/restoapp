@@ -60,24 +60,27 @@ export function Header() {
   return (
     <header className="header flex items-center justify-between bg-white shadow-md">
       <div className="flex items-center space-x-2">
-        <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
-          <ChevronLeft />
-        </button>
+        <Link href="/dashboard">
+          <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
+            <ChevronLeft />
+          </button>
+        </Link>
         <div className="border-r border-gray-300 h-10"></div>
-        <div className="flex items-center space-x-2">
+
+        <Link href="/dashboard" className="flex items-center space-x-2">
           <Image src="/favlogo.png" alt="Logo" width={55} height={50} />
           <div>
             <h1 className="font-bold">Walk-In</h1>
             <p className="text-sm text-gray-500">Coca coffeetalk</p>
           </div>
-        </div>
+        </Link>
       </div>
 
       <div className="flex items-center space-x-2">
         <nav className="flex items-center space-x-4">
           <Link
-            href="/home"
-            className="flex items-center space-x-2 text-orange-500 font-bold"
+            href="/dashboard"
+            className="flex items-center space-x-2 text-theme-500 font-bold"
           >
             <Home className="w-5 h-5" />
             <span className="text-sm font-bold">Home</span>
@@ -91,7 +94,7 @@ export function Header() {
             <span className="text-sm font-bold">Order</span>
           </Link>
           <Link
-            href="/history"
+            href="#"
             className="flex items-center space-x-2 text-gray-500 font-bold"
           >
             <Clock className="w-5 h-5" />
@@ -119,7 +122,7 @@ export function Header() {
           selectedValue={selectedDiningOption}
           onChange={(value) => setSelectedDiningOption(value)}
           label="Dining option"
-          buttonClassName="text-orange-500 bg-orange-100 rounded-full px-3 py-1 text-md btn-head"
+          buttonClassName="text-theme-500 bg-theme-100 rounded-full px-3 py-1 text-md btn-head"
         />
 
         <div className="flex items-center space-x-2">

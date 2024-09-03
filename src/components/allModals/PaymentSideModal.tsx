@@ -72,7 +72,7 @@ const PaymentSideModal: React.FC<PaymentSideModalProps> = ({
           </div>
           <div className="flex justify-between items-center">
             <span className="text-dark">Total Amount</span>
-            <span className="text-md font-semibold text-orange-500">
+            <span className="text-md font-semibold text-theme-500">
               $ 64.00
             </span>
           </div>
@@ -84,7 +84,7 @@ const PaymentSideModal: React.FC<PaymentSideModalProps> = ({
               <button
                 className={`border-2 ${
                   selectedMethod === "Cash"
-                    ? "border-orange-500"
+                    ? "border-theme-500"
                     : "border-gray-300"
                 }`}
                 onClick={() => handlePaymentMethodChange("Cash")}
@@ -94,7 +94,7 @@ const PaymentSideModal: React.FC<PaymentSideModalProps> = ({
               <button
                 className={`border-2 ${
                   selectedMethod === "MasterCard"
-                    ? "border-orange-500"
+                    ? "border-theme-500"
                     : "border-gray-300"
                 }`}
                 onClick={() => handlePaymentMethodChange("MasterCard")}
@@ -109,7 +109,7 @@ const PaymentSideModal: React.FC<PaymentSideModalProps> = ({
               <button
                 className={`border-2 ${
                   selectedMethod === "Visa"
-                    ? "border-orange-500"
+                    ? "border-theme-500"
                     : "border-gray-300"
                 }`}
                 onClick={() => handlePaymentMethodChange("Visa")}
@@ -119,7 +119,7 @@ const PaymentSideModal: React.FC<PaymentSideModalProps> = ({
               <button
                 className={`border-2 ${
                   selectedMethod === "GiftCard"
-                    ? "border-orange-500"
+                    ? "border-theme-500"
                     : "border-gray-300"
                 }`}
                 onClick={() => handlePaymentMethodChange("GiftCard")}
@@ -172,7 +172,7 @@ const PaymentSideModal: React.FC<PaymentSideModalProps> = ({
                     : typeof item === "number"
                     ? "bg-gray-100 hover:bg-gray-200 text-black"
                     : item === "C" || item === "Delete"
-                    ? "bg-orange-100 hover:bg-orange-200 text-orange-500"
+                    ? "bg-theme-100 hover:bg-theme-200 text-theme-500"
                     : "bg-gray-300 hover:bg-gray-400 text-black"
                 }`}
                 onClick={() => handleKeypadClick(item)}
@@ -202,7 +202,7 @@ const PaymentSideModal: React.FC<PaymentSideModalProps> = ({
               <Mail className="w-5 mr-2" />
               Email
             </button>
-            <button className="bg-orange-500 rounded-xl rgb" onClick={handleDoneClick}>
+            <button className="bg-theme-500 rounded-xl rgb" onClick={handleDoneClick}>
               <CheckIcon className="w-5 mr-2" />
               Done
             </button>

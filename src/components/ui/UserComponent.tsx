@@ -25,7 +25,7 @@ const UserComponent: React.FC<UserComponentProps> = ({ id, name, imgSrc, selecte
         width={100}
         height={100}
         className={`rounded-full border-4 mx-auto ${
-          selected ? 'border-orange-500' : 'border-transparent'
+          selected ? 'border-theme-500' : 'border-transparent'
         }`}
       />
       <p className="mt-2 text-white">{name}</p>

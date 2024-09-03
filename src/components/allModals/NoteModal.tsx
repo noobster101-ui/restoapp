@@ -38,7 +38,7 @@ const NoteModal: React.FC<NoteModalProps> = ({ isOpen, onClose }) => {
             Cancel
           </button>
           <button
-            className="px-4 py-2 bg-orange-500 text-white rounded-full"
+            className="px-4 py-2 bg-theme-500 text-white rounded-full"
             onClick={handleAddNote}
           >
             Add to order

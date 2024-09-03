@@ -143,12 +143,12 @@ const UserSelection = () => {
               <div className="my-4">
                 <div className="flex justify-center space-x-4">
                   <button
-                    className="w-full py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-full mb-3 btn1"
+                    className="w-full py-2 bg-theme-500 hover:bg-theme-600 text-white rounded-full mb-3 btn1"
                     onClick={handleClockIn}
                   >
                     Clock in
                   </button>
-                  <button className="w-full py-2 bg-white hover:bg-gray-600 text-orange-500 rounded-full mb-3 btn1">
+                  <button className="w-full py-2 bg-white hover:bg-gray-600 text-theme-500 rounded-full mb-3 btn1">
                     Clock out
                   </button>
                 </div>
@@ -156,7 +156,7 @@ const UserSelection = () => {
             )}
             {showPinInput && <PinInputComponent onUnlock={handleUnlock} />}
             {!showPinInput && (
-              <button className="w-full py-2 bg-transparent border border-orange-500 hover:bg-orange-600 text-orange-500 rounded-full mb-3 btn-blur btn2">
+              <button className="w-full py-2 bg-transparent border border-theme-500 hover:bg-theme-600 text-theme-500 rounded-full mb-3 btn-blur btn2">
                 Login
               </button>
             )}

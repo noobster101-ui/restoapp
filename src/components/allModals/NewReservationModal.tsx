@@ -99,7 +99,7 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
                 key={size}
                 className={`cursor-pointer px-4 py-2 ${
                   selectedPartySize === size
-                    ? "bg-orange-100 text-orange-500 border-orange-500"
+                    ? "bg-theme-100 text-theme-500 border-theme-500"
                     : "bg-white text-gray-700 border-gray-300"
                 } ${
                   index === 0
@@ -200,7 +200,7 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
                 key={tag}
                 className={`cursor-pointer border rounded-full ${
                   guestDetails.tag.includes(tag)
-                    ? "bg-orange-100 text-orange-500 border-orange-500"
+                    ? "bg-theme-100 text-theme-500 border-theme-500"
                     : "bg-white text-gray-700 border-gray-300"
                 }`}
                 style={{padding:"4px 10px"}}

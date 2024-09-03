@@ -4,9 +4,9 @@
 
 :root {
   /* Define color variables */
-  --color-primary: #ff7043;
-  --color-primary-light: #ff9230;
-  --color-secondary: #f97316;
+  --color-theme: #7c3aed;
+  --color-theme-light: #7c3aede8;
+  --color-secondary: #6f23f3;
   --color-gray-50: #f3f4f6;
   --color-gray-100: #f0f0f0;
   --color-gray-200: #d1d5db;
@@ -18,9 +18,9 @@
   --color-gray-800: #111827;
   --color-black-50: #111;
   --color-white: #ffffff;
-  --color-orange-light: #ffe8d6;
-  --color-orange-dark: #ea580c;
-  --color-pink-500: #ff5a61;
+  --color-theme-light: #e0cefa;
+  --color-theme-dark: #6c3bc0;
+  --color-theme-500: #7e48db;
   --color-blue-500: #2f8ff7;
   --color-blue-light: #a5d0fe;
   --color-green-500: #1dd147;
@@ -44,6 +44,22 @@
   border: 2px solid var(--color-gray-50);
 }
 
+// Color Code
+.bg-theme-500 {
+  background-color: var(--color-theme);
+}
+.hover\:bg-theme-600:hover {
+  background-color: var(--color-theme-dark) !important;
+}
+.border-theme-500 {
+  border-color: var(--color-theme);
+}
+.bg-theme-100 {
+  background-color: var(--color-theme-light) !important;
+}
+.text-red-500 {
+  color: var(--color-theme-dark);
+}
 // Login Page
 
 .loginBox {
@@ -75,7 +91,7 @@
 
 // User Selection
 
-.btn-head.text-orange-500:hover {
+.btn-head.text-theme-500:hover {
   color: var(--color-white);
 }
 
@@ -83,8 +99,8 @@ button:hover {
   opacity: 0.9;
 }
 
-.text-orange-500 {
-  color: var(--color-primary);
+.text-theme-500 {
+  color: var(--color-theme);
 }
 
 .btn-blur {
@@ -196,7 +212,7 @@ button:hover {
 
   .slick-prev:hover,
   .slick-next:hover {
-    color: var(--color-primary);
+    color: var(--color-theme);
     opacity: 1;
   }
 
@@ -206,7 +222,7 @@ button:hover {
   }
 
   .slick-dots li.slick-active button:before {
-    color: var(--color-primary);
+    color: var(--color-theme);
     opacity: 1;
   }
 
@@ -268,7 +284,7 @@ body {
 }
 
 .breadcrumb {
-  @apply text-orange-500 text-sm;
+  @apply text-theme-500 text-sm;
   box-shadow: 0 0px 6px -1px rgba(0, 0, 0, 0.1);
   margin-bottom: 2px;
   border-radius: 2px;
@@ -356,7 +372,9 @@ body {
 }
 
 .button-outline.active {
-  @apply bg-orange-100 text-orange-500 border border-orange-500;
+  background-color: var(--color-theme-light);
+  color: var(--color-theme-dark);
+  border: 1px solid var(--color-theme);
 }
 
 // Header
@@ -371,7 +389,7 @@ body {
   height: 70px;
 
   .nav-link.active {
-    @apply text-orange-500;
+    color: var(--color-theme-dark);
   }
 }
 
@@ -392,9 +410,15 @@ body {
 }
 
 .sidebar-link.active {
-  @apply bg-gradient-to-t from-pink-500 to-orange-400 text-white rounded-lg;
+  background: linear-gradient(
+    to top,
+    var(--color-theme-light),
+    var(--color-theme-dark)
+  );
   border-radius: 8px;
-
+  .sidebar-text {
+    color: #fff;
+  }
   .sidebar-icon {
     color: var(--color-white);
   }
@@ -477,7 +501,7 @@ body {
 
   .pay-now {
     width: 100%;
-    background-color: var(--color-secondary);
+    background-color: var(--color-theme);
     color: var(--color-white);
     font-size: 14px;
     font-weight: 500;
@@ -608,7 +632,7 @@ body {
     }
 
     &.selected {
-      background-color: var(--color-orange-light);
+      background-color: var(--color-theme-light);
       color: var(--color-secondary);
     }
   }
@@ -885,7 +909,7 @@ body {
         }
 
         span {
-          background: var(--color-pink-500);
+          background: var(--color-theme-500);
           border: none;
           cursor: pointer;
           font-size: 11px;
@@ -911,7 +935,7 @@ body {
     white-space: nowrap;
 
     &:hover {
-      background-color: var(--color-orange-dark);
+      background-color: var(--color-theme-dark);
     }
   }
 }
@@ -1160,11 +1184,11 @@ body {
     .rgb {
       background-image: linear-gradient(
         to left bottom,
-        var(--color-primary-light),
-        #ff843c,
-        #ff7648,
-        #ff6855,
-        var(--color-pink-500)
+        var(--color-theme-light),
+        var(--color-theme),
+        var(--color-theme-light),
+        var(--color-theme),
+        var(--color-theme-500)
       );
       color: var(--color-white);
     }
@@ -1233,8 +1257,8 @@ body {
   margin: 4px 0;
 }
 
-.border-orange {
-  border-color: var(--color-orange-dark) !important;
+.border-theme {
+  border-color: var(--color-theme-dark) !important;
 }
 
 @media (max-width: 1100px) {
