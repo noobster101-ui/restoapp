@@ -39,12 +39,12 @@ const ApplyCouponModal: React.FC<ApplyCouponModalProps> = ({
         <div className="flex justify-center space-x-2">
           <Button
             variant="outline"
-            className="rounded-full px-16"
+            className="rounded-full px-16 border-theme-500"
             onClick={onClose}
           >
             Cancel
           </Button>
-          <Button className="rounded-full px-16 bg-theme-600 text-white hover:bg-theme-500">
+          <Button className="rounded-full px-16 bg-theme-500 text-white hover:bg-theme-500">
             Apply
           </Button>
         </div>
