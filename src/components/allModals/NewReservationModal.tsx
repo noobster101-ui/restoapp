@@ -29,7 +29,7 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
   });
 
   const partySizes = [1, 2, 3, 4, 5, 6, 7, "8+"];
-  const timeSlots = [
+  const timeSlotValues = [
     "09:00 AM",
     "09:15 AM",
     "11:00 AM",
@@ -47,6 +47,16 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
     "09:00 PM",
   ];
 
+  const timeSlotDisplay = timeSlotValues.map((time) => {
+    const [hourMinute, ampm] = time.split(" ");
+    return (
+      <>
+        <span>{hourMinute}</span>
+        <br />
+        <small>{ampm}</small>
+      </>
+    );
+  });
   const modalSize = useScreenSize<"sm" | "md" | "lg" | "xl" | "xxl">({
     base: "md",
     sm: "xxl",
@@ -97,7 +107,7 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
             {partySizes.map((size, index) => (
               <label
                 key={size}
-                className={`cursor-pointer px-4 py-2 ${
+                className={`cursor-pointer px-4 py-2 font-bold ${
                   selectedPartySize === size
                     ? "bg-theme-100 text-theme-500 border-theme-500"
                     : "bg-white text-gray-700 border-gray-300"
@@ -126,10 +136,12 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
 
           <p className="font-bold mb-2">Time slot available</p>
           <div className="timeSlotContainer">
-            {timeSlots.map((time, index) => (
+            {timeSlotValues.map((time, index) => (
               <label
                 key={time}
-                className={`${selectedTimeSlot === time ? "selected" : ""}`}
+                className={`font-semibold ${
+                  selectedTimeSlot === time ? "selected" : ""
+                }`}
               >
                 <input
                   type="radio"
@@ -137,9 +149,8 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
                   value={time}
                   checked={selectedTimeSlot === time}
                   onChange={() => setSelectedTimeSlot(time)}
-                  className="hidden"
                 />
-                {time}
+                {timeSlotDisplay[index]}
               </label>
             ))}
           </div>
@@ -183,9 +194,7 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
           </div>
 
           <div className="grid grid-cols-1 px-3">
-            <label className="block">
-              Tags
-            </label>
+            <label className="block">Tags</label>
           </div>
 
           <div className="flex flex-wrap gap-2 px-3 mb-4">
@@ -203,7 +212,7 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
                     ? "bg-theme-100 text-theme-500 border-theme-500"
                     : "bg-white text-gray-700 border-gray-300"
                 }`}
-                style={{padding:"4px 10px"}}
+                style={{ padding: "4px 10px" }}
               >
                 <input
                   type="checkbox"
@@ -229,9 +238,8 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
               </label>
             ))}
           </div>
-          
+
           <div className="grid grid-cols-1 mb-3">
-           
             <LabelInput
               name="visitNote"
               label="Visit note"
@@ -256,7 +264,7 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
                 })
               }
             />
-             <LabelInput
+            <LabelInput
               name="takenBy"
               label="Taken by (Initials)"
               placeholder="Enter initials"
@@ -266,7 +274,6 @@ const NewReservation: React.FC<NewReservationProps> = ({ isOpen, onClose }) => {
               }
             />
           </div>
-
         </form>
       )}
     </Modal>

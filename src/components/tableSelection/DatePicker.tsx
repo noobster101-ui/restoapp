@@ -39,7 +39,7 @@ const DatePicker: React.FC = () => {
   };
 
   return (
-    <div className="py-4">
+    <div className="py-4 cbold">
       {/* Date Picker Header */}
       <div className="flex justify-between items-center mb-1">
         <p className="font-bold mb-2">Select Date</p>
@@ -90,10 +90,11 @@ const DatePicker: React.FC = () => {
             >
               <span
                 className={day.date === selectedDate ? "font-semibold" : " font-normal"}
+                style={{fontSize:"12px"}}
               >
                 {day.day}
               </span>
-              <span>{day.date}</span>
+              <span  className={day.date === selectedDate ? "font-extrabold" : " font-bold"}>{day.date}</span>
             </button>
           ))}
         </div>

@@ -583,16 +583,30 @@ body {
   border: 1px solid var(--color-gray-200);
   border-radius: 20px;
   overflow: hidden;
-
+  .selected {
+    small {
+      color:var(--color-theme-theme);
+    }
+  }
   label {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
-    padding: 12px 0;
+    padding: 12px 0!important;
+    text-align: center;
     cursor: pointer;
     border: 1px solid var(--color-gray-200);
     margin-left: -1px;
     margin-top: -1px;
+    line-height: 1;
+    input {
+      display: none;
+    }
+    small {
+      font-size: 11px;
+      color: #a19f9f;
+    }
+   
 
     // Top Row (first 5 items)
     &:nth-child(-n + 5) {
@@ -662,7 +676,7 @@ body {
 }
 
 .calenderFix {
-  padding: 16px 20px;
+  padding: 14px 18px;
   border-right: 1px solid var(--color-gray-200);
 
   svg {
@@ -685,7 +699,8 @@ body {
 }
 
 // Table Selection
-
+.cbold {
+}
 .table-controls {
   // display: flex;
   align-items: center;
@@ -994,7 +1009,7 @@ body {
     form {
       label {
         font-size: 16px;
-        padding: 15px 0;
+        padding: 14px 0;
       }
     }
   }

@@ -50,7 +50,7 @@ const Reservation: React.FC = () => {
         </thead>
         <tbody className="text-sm text-gray-700">
           {reservations.map((reservation, index) => (
-            <tr key={index} className="border-t border-gray-200">
+            <tr key={index} className="border-t border-gray-200 font-medium">
               <td className="py-2">{reservation.customerName}</td>
               <td className="py-2">{reservation.time}</td>
               <td className="py-2">{reservation.table}</td>
